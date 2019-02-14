@@ -1,0 +1,181 @@
+<script type="text/discourse-plugin"version="0.8.18">
+
+const { iconNode, convertIconClass } = require("discourse-common/lib/icon-library");
+const h = require("virtual-dom").h;
+
+let columnIcons = [
+  settings.first_column_icon,
+  settings.second_column_icon,
+  settings.third_column_icon,
+  settings.fourth_column_icon
+];
+
+api.createWidget("banner-column-icon", {
+  tagName: "div.icon",
+  html(attrs) {
+    let columnIcon = columnIcons[attrs.column];
+    if(columnIcon.includes("http") || columnIcon.includes("/uploads/")) {
+      return h("img.responsive-img", { src: columnIcon });
+    } else {
+      let covertedIcon = convertIconClass(columnIcons[attrs.column]);
+      return iconNode(covertedIcon);
+    }
+  }
+});
+
+function setCurrentExpDate(cookieExpDate) {
+  if($.cookie("banner_closed")) {
+    let closedCookie = JSON.parse($.cookie("banner_closed"));
+    if(closedCookie.name != settings.cookie_name) {
+      $.removeCookie("banner_closed", {path: '/'} );
+    } else {
+      $.cookie("banner_closed", JSON.stringify(closedCookie), { expires: cookieExpDate, path: '/' });
+    }
+  }
+
+  if($.cookie("banner_collapsed")) {
+    let collapsedCookie = JSON.parse($.cookie("banner_collapsed"));
+    if(collapsedCookie.name != settings.cookie_name) {
+      $.removeCookie("banner_collapsed", {path: '/'} );
+    } else {
+      $.cookie("banner_collapsed", JSON.stringify(collapsedCookie), { expires: cookieExpDate, path: '/' });
+    }
+  }
+}
+
+function setupBanner() {
+  if($.cookie("banner_closed")) {
+    let closedCookie = JSON.parse($.cookie("banner_closed"));
+    if(closedCookie.closed == "true" && settings.dismissible) {
+      $('.banner-box').addClass("hidden");
+    }
+  }
+
+  let collapsedCookie;
+  if($.cookie("banner_collapsed")) {
+    collapsedCookie = JSON.parse($.cookie("banner_collapsed"));
+  }
+  if(!$.cookie("banner_collapsed") && settings.collapsible || collapsedCookie && collapsedCookie.collapsed == "true") {
+    $('#banner-content_wrap').addClass("hidden");
+    $('.d-icon-chevron-down').removeClass("hidden");
+    $('.d-icon-chevron-up').addClass("hidden");
+  }
+  else {
+    $('#banner-content_wrap').removeClass("hidden");
+    $('.d-icon-chevron-down').addClass("hidden");
+    $('.d-icon-chevron-up').removeClass("hidden");
+  }
+}
+
+function addClickEvents(cookieExpDate) {
+  $('.banner-box .close').click(function() {
+    $(".banner-box").addClass("hidden");
+    if(cookieExpDate) {
+      let bannerState = { name: settings.cookie_name, closed: "true" };
+      $.cookie("banner_closed", JSON.stringify(bannerState), { expires: cookieExpDate, path: '/' });
+    }
+  });
+
+  $(".banner-box .toggle").click(function() {
+    $("#banner-content_wrap").slideToggle();
+    $('.d-icon-chevron-down').toggle();
+    $('.d-icon-chevron-up').toggle();
+
+    if(cookieExpDate) {
+      if($.cookie("banner_collapsed")) {
+        let bannerState = JSON.parse($.cookie('banner_collapsed'));
+        bannerState.name = settings.cookie_name;
+        if(bannerState.collapsed == "false") {
+          bannerState.collapsed = "true";
+        } else {
+          bannerState.collapsed = "false";
+        }
+      } else {
+        bannerState = { name: settings.cookie_name, collapsed: "false" }
+      }
+      $.cookie("banner_collapsed", JSON.stringify(bannerState), { expires: cookieExpDate, path: '/' });
+    }
+  });
+}
+
+api.modifyClass("component:site-header", { 
+  didInsertElement: function() {
+    this._super();
+    let rawDate = moment(settings.cookie_expiration_date);
+    if (rawDate.isValid()) {
+      let cookieExpDate = rawDate.toDate();
+      setCurrentExpDate(cookieExpDate);
+      addClickEvents(cookieExpDate);
+    } else {
+      $.removeCookie("banner_closed", {path: '/'} );
+      $.removeCookie("banner_collapsed", {path: '/'} );
+      addClickEvents(false);
+    }
+    setupBanner();
+  }
+});
+
+</script>
+
+<script type="text/x-handlebars" data-template-name="/connectors/custom-banner/banner">
+  <section class="banner-box">
+  <div class="button-container">
+    {{#if (theme-setting 'dismissible')}}
+    <button type="button" class="close">
+      {{d-icon 'times'}}
+    </button>
+    {{/if}}
+    {{#if (theme-setting 'collapsible')}}
+    <button type="button" class="toggle">
+      {{d-icon 'chevron-down'}}{{d-icon 'chevron-up'}}
+    </button>
+    {{/if}}
+  </div>
+    <div class="container">
+      <div class="section-header">
+        {{{theme-setting 'main_heading_content'}}}
+      </div>
+      <div id="banner-content_wrap">
+        <div class="row">
+          {{#if (theme-setting 'first_column_content')}}
+          <div class="first_column single-box">
+            {{mount-widget widget="banner-column-icon" args=(hash column=0)}}
+            <div>{{{theme-setting 'first_column_content'}}}</div>
+          </div>
+          {{/if}}
+          {{#if (theme-setting 'second_column_content')}}
+          <div class="second_column single-box">
+            {{mount-widget widget="banner-column-icon" args=(hash column=1)}}
+            <div>{{{theme-setting 'second_column_content'}}}</div>
+          </div>
+          {{/if}}
+          {{#if (theme-setting 'third_column_content')}}
+          <div class="third_column single-box">
+            {{mount-widget widget="banner-column-icon" args=(hash column=2)}}
+            <div>{{{theme-setting 'third_column_content'}}}</div>
+          </div>
+          {{/if}}
+          {{#if (theme-setting 'fourth_column_content')}}
+          <div class="fourth_column single-box">
+            {{mount-widget widget="banner-column-icon" args=(hash column=3)}}
+            <div>{{{theme-setting 'fourth_column_content'}}}</div>
+          </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </section>
+</script>
+
+<script type="text/x-handlebars" data-template-name="/connectors/above-main-container/banner-themes">
+  {{#if (theme-setting 'show_for_members')}}
+    {{#if currentUser}}
+      {{plugin-outlet name="custom-banner"}}
+    {{/if}}
+  {{/if}}
+  {{#if (theme-setting 'show_for_anon')}}
+    {{#unless currentUser}}
+      {{plugin-outlet name="custom-banner"}}
+    {{/unless}}
+  {{/if}}
+</script>

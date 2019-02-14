@@ -1,0 +1,238 @@
+@if $display_on_desktop == "false" {
+  .banner-box {
+    display: none !important;
+  }
+}
+.banner-box {
+  color: $primary_text_color;
+  position: relative;
+  margin-bottom: 20px;
+  background-image: url($banner_background_image);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: $background_color;
+
+  .button-container {
+    position: absolute;
+    right: 0;
+
+    .close,
+    .toggle {
+      float: right;
+      padding-top: 5px;
+      border: none;
+      color: #646464;
+      background: transparent;
+      font-size: 1.5157em;
+      cursor: pointer;
+
+      &:hover {
+        color: #222;
+      }
+
+      .svg-icon.hidden {
+        display: none;
+      }
+    }
+  }
+
+  .section-header {
+    padding-bottom: 20px;
+
+    .x-title {
+      padding: 15px 65px;
+      margin: 0;
+      text-align: center;
+      color: $secondary_text_color;
+    }
+
+    .colored-line {
+      margin: auto;
+      width: 165px;
+      height: 1px;
+      background: $secondary_text_color;
+    }
+
+    .description p {
+      margin: 0;
+      padding: 15px;
+      text-align: center;
+    }
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+
+    .single-box {
+      float: left;
+      position: relative;
+      min-height: 1px;
+      padding: 0px 15px 30px;
+      text-align: center;
+
+      .icon {
+        font-size: 70px;
+        color: $secondary_text_color;
+
+        .responsive-img {
+          vertical-align: -0.125em;
+          border-style: none;
+          border-width: 1px;
+          height: 70px;
+        }
+      }
+
+      h3 {
+        text-align: center;
+        color: $secondary_text_color;
+      }
+
+      .banner-list {
+        display: flex;
+        justify-content: center;
+        ul {
+          text-align: left;
+          margin: 0;
+        }
+      }
+
+      .btn.btn-icon-text {
+        background: $secondary_text_color;
+      }
+    }
+  }
+}
+
+//-------------------------- Setting Based Rules --------------------------//
+//                      Modify using theme settings
+//-------------------------------------------------------------------------//
+
+////////////// Columns //////////////
+
+// First column
+@if $first_column_size == "auto" {
+  .first_column {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+} @else {
+  .first_column {
+    width: $first_column_size;
+  }
+}
+
+// Second column
+@if $second_column_size == "auto" {
+  .second_column {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+} @else {
+  .second_column {
+    width: $second_column_size;
+  }
+}
+
+// Third column
+@if $third_column_size == "auto" {
+  .third_column {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+} @else {
+  .third_column {
+    width: $third_column_size;
+  }
+}
+
+// Fourth column
+@if $fourth_column_size == "auto" {
+  .fourth_column {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+} @else {
+  .fourth_column {
+    width: $fourth_column_size;
+  }
+}
+
+////////////// Full Width //////////////
+
+@if $full_width_banner == "true" {
+  #main {
+    overflow: hidden; // Needed to compensate for the overflow caused by the vertical scrollbar
+
+    #main-outlet {
+      padding-top: 4em;
+
+      .banner-box {
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+
+        // Needed to compensate for the overflow caused by the vertical scrollbar
+        .button-container {
+          margin-right: 10px;
+        }
+
+        .container {
+          max-width: 85%;
+          margin: 0 auto;
+        }
+      }
+      .navigation-container,
+      .alert.alert-info {
+        margin-top: 18px;
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 736px) {
+  @if $display_on_mobile == "false" {
+    .banner-box {
+      display: none !important;
+    }
+  }
+
+  // Wrap columns
+  .banner-box .row {
+    display: block;
+  }
+
+  // Drop heading below main title
+  @if $dismissible == "true" or $collapsible == "true" {
+    .banner-box .section-header .x-title {
+      margin-top: 1.5em;
+    }
+  }
+
+  .banner-box .section-header .x-title {
+    padding: 15px;
+  }
+
+  // Make columns big enough to wrap
+  .first_column,
+  .second_column,
+  .third_column,
+  .fourth_column {
+    width: 90%;
+  }
+
+  // Compensation for the overflow caused by the
+  // vertical scrollbar not needed on mobile
+  .button-container {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 736px) {
+  @if $display_on_desktop == "false" {
+    .banner-box {
+      display: none !important;
+    }
+  }
+}
