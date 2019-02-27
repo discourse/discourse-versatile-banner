@@ -82,8 +82,9 @@ function addClickEvents(cookieExpDate) {
     $('.d-icon-chevron-up').toggle();
 
     if(cookieExpDate) {
+      let bannerState
       if($.cookie("banner_collapsed")) {
-        let bannerState = JSON.parse($.cookie('banner_collapsed'));
+        bannerState = JSON.parse($.cookie('banner_collapsed'));
         bannerState.name = settings.cookie_name;
         if(bannerState.collapsed == "false") {
           bannerState.collapsed = "true";
