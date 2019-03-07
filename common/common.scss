@@ -3,6 +3,7 @@
     display: none !important;
   }
 }
+
 .banner-box {
   color: $primary_text_color;
   position: relative;
@@ -106,7 +107,7 @@
 }
 
 //-------------------------- Setting Based Rules --------------------------//
-//                      Modify using theme settings
+//                      Modified using theme settings
 //-------------------------------------------------------------------------//
 
 ////////////// Columns //////////////
@@ -165,36 +166,45 @@
   #main {
     overflow: hidden; // Needed to compensate for the overflow caused by the vertical scrollbar
 
-    #main-outlet {
-      padding-top: 4em;
+    .banner-box {
+      margin-top: -2em;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
 
-      .banner-box {
-        margin-left: calc(-50vw + 50%);
-        margin-right: calc(-50vw + 50%);
-
-        // Needed to compensate for the overflow caused by the vertical scrollbar
-        .button-container {
-          margin-right: 10px;
-        }
-
-        .container {
-          max-width: 85%;
-          margin: 0 auto;
-        }
+      // Needed to compensate for the overflow caused by the vertical scrollbar
+      .button-container {
+        margin-right: 10px;
       }
-      .navigation-container,
-      .alert.alert-info {
-        margin-top: 18px;
-        margin-bottom: 0px;
+
+      .container {
+        max-width: 85%;
+        margin: 0 auto;
       }
     }
   }
+
+  // Remove spacing when Category Banners are in place
+  body.category-header .banner-box {
+    margin-top: -1.5em;
+  }
+
 }
 
 @media screen and (max-width: 736px) {
   @if $display_on_mobile == "false" {
     .banner-box {
       display: none !important;
+    }
+  }
+
+  @if $full_width_banner == "true" {
+    // Overflow has to be handled in a different way on mobile
+    #main {
+      overflow: visible;
+    }
+    .banner-themes {
+      overflow: hidden;
+      margin: 0 -8px;
     }
   }
 
