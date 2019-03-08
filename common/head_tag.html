@@ -140,25 +140,33 @@ api.modifyClass("component:site-header", {
         <div class="row">
           {{#if (theme-setting 'first_column_content')}}
           <div class="first_column single-box">
-            {{mount-widget widget="banner-column-icon" args=(hash column=0)}}
+            {{#if (theme-setting 'first_column_icon')}}
+              {{mount-widget widget="banner-column-icon" args=(hash column=0)}}
+            {{/if}}
             <div>{{{theme-setting 'first_column_content'}}}</div>
           </div>
           {{/if}}
           {{#if (theme-setting 'second_column_content')}}
           <div class="second_column single-box">
-            {{mount-widget widget="banner-column-icon" args=(hash column=1)}}
+            {{#if (theme-setting 'second_column_icon')}}
+              {{mount-widget widget="banner-column-icon" args=(hash column=1)}}
+            {{/if}}
             <div>{{{theme-setting 'second_column_content'}}}</div>
           </div>
           {{/if}}
           {{#if (theme-setting 'third_column_content')}}
           <div class="third_column single-box">
-            {{mount-widget widget="banner-column-icon" args=(hash column=2)}}
+            {{#if (theme-setting 'third_column_icon')}}
+              {{mount-widget widget="banner-column-icon" args=(hash column=2)}}
+            {{/if}}
             <div>{{{theme-setting 'third_column_content'}}}</div>
           </div>
           {{/if}}
           {{#if (theme-setting 'fourth_column_content')}}
           <div class="fourth_column single-box">
-            {{mount-widget widget="banner-column-icon" args=(hash column=3)}}
+            {{#if (theme-setting 'fourth_column_icon')}}
+              {{mount-widget widget="banner-column-icon" args=(hash column=3)}}
+            {{/if}}
             <div>{{{theme-setting 'fourth_column_content'}}}</div>
           </div>
           {{/if}}
