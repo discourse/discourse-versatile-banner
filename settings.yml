@@ -28,6 +28,13 @@ collapsible:
   default: false
   description: 
     en: 'Allow the banner to be expanded and collapsed by users'
+default_collapsed_state:
+  type: enum
+  default: collapsed
+  choices:
+    - expanded
+  description: 
+    en: 'Default collapsed state when collapsible setting is enabled'
 cookie_expiration_date:
   type: string
   default: ""
