@@ -187,7 +187,6 @@
   body.category-header .banner-box {
     margin-top: -1.5em;
   }
-
 }
 
 @media screen and (max-width: 736px) {
@@ -213,15 +212,22 @@
     display: block;
   }
 
-  // Drop heading below main title
-  @if $dismissible == "true" or $collapsible == "true" {
-    .banner-box .section-header .x-title {
-      margin-top: 1.5em;
-    }
-  }
-
   .banner-box .section-header .x-title {
     padding: 15px;
+    margin-top: 1em;
+  }
+
+  // Drop heading below main title
+  @if $dismissible == "true" or $collapsible == "true" {
+    .button-container {
+      margin-top: 1.5em;
+      button {
+        padding: 5px 5px;
+      }
+    }
+    .banner-box .section-header .x-title {
+      margin-top: 2em;
+    }
   }
 
   // Make columns big enough to wrap
