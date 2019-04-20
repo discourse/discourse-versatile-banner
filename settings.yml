@@ -18,6 +18,16 @@ display_on_desktop:
   default: true
   description: 
     en: 'Display the banner on desktop computers'
+display_on_homepage:
+  type: bool
+  default: true
+  description: 
+    en: 'Display the banner on the homepage'
+url_must_contain:
+  type: list
+  default: /c/|/t/
+  description: 
+    en: 'If any of the above sets of characters appear in the URL, the banner will display'
 dismissible:
   type: bool
   default: false
@@ -35,22 +45,25 @@ default_collapsed_state:
     - expanded
   description: 
     en: 'Default collapsed state when collapsible setting is enabled'
-cookie_expiration_date:
-  type: string
-  default: ""
+cookie_lifespan:
+  type: enum
+  default: none
+  choices:
+    - minute
+    - day
+    - week
+    - month
+    - year
   description: 
-    en: 'Leaving this setting blank will disable the cookies and make sure any existing banner cookies 
-        are deleted the next time a user visits. Two cookies are used to persist the expanded/collapsed 
-        state and closed state of the banner. Enter a date in the following format:<br>
-        <b>DD Mon YYYY HH:MM TIMEZONE</b><br>
-        Example: <b>12 Feb 2019 16:38 PST</b><br>
-        WARNING: See "cookie name" setting below for important info
-        regarding changes made to the banner after cookies have been activated.'
+    en: 'The lifespan of the cookie used to remember if the banner has been closed, expanded, or collapsed.
+         If set to "none", NO cookies will be used with this component, and any previously created cookies 
+         related to the banner will be deleted the next time a user performs a full page load. The values are 
+         measured as a single unit, so setting "year" will be one year, "week" will be one week, etc.'
 cookie_name:
   type: string
   default: "v1"
   description: 
-    en: 'When important changes are made to the banner, you must change the cookie name name to ensure all your users see the changes.'
+    en: 'When important changes are made to the banner, you must change the cookie name to ensure all your users see the changes.'
 full_width_banner:
   type: bool
   default: false
@@ -75,7 +88,12 @@ secondary_text_color:
   type: string
   default: "#FF6C00"
   description:
-    en: 'The text color of the icon and text headings, and the button background color.
+    en: 'The text color of the icon and text headings, and the button background color.'
+link_text_color:
+  type: string
+  default: "#0f82af"
+  description:
+    en: 'The text color links within the banner.
         <br><br><br>
         <h2>Banner Content Customization</h2>
         Customize the content of the banner with HTML. If you need to style your custom content 
@@ -182,7 +200,7 @@ first_column_icon:
   default: 'cog'
 second_column_icon:
   type: string
-  default: 'https://meta-s3-cdn.freetls.fastly.net/original/3X/b/3/b33be9538df3547fcf9d1a51a4637d77392ac6f9.png'
+  default: 'https://d11a6trkgmumsb.cloudfront.net/original/3X/b/3/b33be9538df3547fcf9d1a51a4637d77392ac6f9.png'
 third_column_icon:
   type: string
   default: 'wrench'
