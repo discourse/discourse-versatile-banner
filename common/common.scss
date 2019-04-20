@@ -16,20 +16,36 @@
 
   .button-container {
     position: absolute;
+    z-index: z("base") + 1;
     right: 0;
+    top: 2px;
 
     .close,
     .toggle {
       float: right;
-      padding-top: 5px;
+      padding: 5px;
       border: none;
       color: #646464;
       background: transparent;
       font-size: 1.5157em;
       cursor: pointer;
 
+      svg {
+        color: #646464;
+      }
+      .d-button-label {
+        font-size: 1em;
+        color: #646464;
+      }
+
       &:hover {
-        color: #222;
+        svg {
+          color: #222222;
+        }
+        .d-button-label {
+          font-size: 1em;
+          color: #222222;
+        }
       }
 
       .svg-icon.hidden {
@@ -38,14 +54,17 @@
     }
   }
 
+  h1, h2, h3 {
+    text-align: center;
+    color: $secondary_text_color;
+  }
+
   .section-header {
     padding-bottom: 20px;
 
     .x-title {
-      padding: 15px 65px;
+      padding: 25px 65px;
       margin: 0;
-      text-align: center;
-      color: $secondary_text_color;
     }
 
     .colored-line {
@@ -83,11 +102,6 @@
           border-width: 1px;
           height: 70px;
         }
-      }
-
-      h3 {
-        text-align: center;
-        color: $secondary_text_color;
       }
 
       .banner-list {
@@ -182,11 +196,6 @@
       }
     }
   }
-
-  // Remove spacing when Category Banners are in place
-  body.category-header .banner-box {
-    margin-top: -1.5em;
-  }
 }
 
 @media screen and (max-width: 736px) {
@@ -209,13 +218,12 @@
   // Drop heading below main title
   @if $dismissible == "true" or $collapsible == "true" {
     .button-container {
-      margin-top: 1.5em;
       button {
         padding: 5px 5px;
       }
-    }
-    .banner-box .section-header .x-title {
-      margin-top: 2em;
+      .d-button-label {
+        display: none;
+      }
     }
   }
 
@@ -240,4 +248,12 @@
       display: none !important;
     }
   }
+}
+
+// Adjust Discourse Category Banners if it is in place
+.category-header #main-outlet {
+  padding-top: 5.8572em !important;
+}
+.category-title-header {
+  margin-bottom: -65px !important;
 }
