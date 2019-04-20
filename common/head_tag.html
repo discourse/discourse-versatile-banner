@@ -10,170 +10,215 @@ let columnIcons = [
   settings.fourth_column_icon
 ];
 
+let cookieExpDate;
+if (settings.cookie_lifespan == "none") {
+  $.removeCookie("banner_closed", {path: '/'} );
+  $.removeCookie("banner_collapsed", {path: '/'} );
+}
+else {
+  cookieExpDate = moment().add(1, settings.cookie_lifespan).toDate();
+}
+
+let toggleState;
+
+function setupBanner() {
+  let collapsedCookie;
+  let closedCookie;
+  if($.cookie("banner_collapsed")) {
+    collapsedCookie = JSON.parse($.cookie("banner_collapsed"));
+    if(collapsedCookie.name != settings.cookie_name) {
+      $.removeCookie("banner_collapsed", {path: '/'} );
+    }
+  }
+  if($.cookie("banner_closed")) {
+    closedCookie = JSON.parse($.cookie("banner_closed"));
+    if(closedCookie.name != settings.cookie_name) {
+      $.removeCookie("banner_closed", {path: '/'} );
+    }
+  }
+
+  if(!$.cookie("banner_collapsed") && settings.collapsible && settings.default_collapsed_state == "collapsed" || collapsedCookie && collapsedCookie.collapsed == "true") {
+    toggleState = "collapsed";
+    return ".hidden"
+  } else {
+    toggleState = "expanded";
+    return ""
+  }
+}
+
+api.createWidget("banner-box-widget", {
+  tagName: "div.banner-box",
+  html(attrs) {
+
+    const path = window.location.pathname;
+
+    let showOnHomepage;
+    if(settings.display_on_homepage) {
+      let hasSingleForwardSlash = new RegExp('[^\/]\/[^\/]');
+      showOnHomepage = !hasSingleForwardSlash.test(path);
+    }
+
+    let urlMatch;
+    if(settings.url_must_contain.length) {
+      let escapedList = settings.url_must_contain.replace(/\//g, '\\/');
+      let regex = new RegExp(escapedList);
+      urlMatch = regex.test(path);
+    }
+
+    if(!$.cookie("banner_closed") && (showOnHomepage || urlMatch)) {
+      return [
+        h('div.container', [
+          this.attach("banner-button-container-widget"),
+          h('div.section-header', { innerHTML: settings.main_heading_content }),
+          this.attach('banner-content-widget') 
+        ])
+      ]
+    }
+  }
+});
+
+api.decorateWidget('banner-box-widget:after', helper => {
+  helper.widget.appEvents.on('page:changed', () => {
+    helper.widget.scheduleRerender();
+  });
+});
+
+api.createWidget("banner-button-container-widget", {
+  tagName: "div.button-container",
+  html(attrs) {
+    let buttons = [];
+
+    if(settings.dismissible) {
+      buttons.push(
+        this.attach("button", {
+          label: themePrefix("close.label"),
+          title: themePrefix("close.title"),
+          icon: "times",
+          action: "buttonPressed",
+          actionParam: "close",
+          className: "close"
+        })
+      );
+    }
+    if(settings.collapsible) {
+      buttons.push(
+        this.attach("button", {
+          label: this.toggleLabel(),
+          title: themePrefix("toggle.title"),
+          icon: this.toggleIcon(),
+          action: "buttonPressed",
+          actionParam: "toggle",
+          className: "toggle"
+        })
+      );
+    }
+    return buttons;
+  },
+  buttonPressed(button) {
+    if(button == "close") {
+      $(".banner-box").addClass("hidden");
+      if(cookieExpDate) {
+        let bannerState = { name: settings.cookie_name, closed: "true" };
+        $.cookie("banner_closed", JSON.stringify(bannerState), { expires: cookieExpDate, path: '/' });
+      }
+    }
+    else if (button == "toggle") {
+      toggleState = (toggleState === "expanded") ? "collapsed" : "expanded";
+      $("#banner-content_wrap").slideToggle();
+
+      if(cookieExpDate) {
+        let bannerState;
+        if($.cookie("banner_collapsed")) {
+          bannerState = JSON.parse($.cookie('banner_collapsed'));
+          bannerState.name = settings.cookie_name;
+          if(bannerState.collapsed == "false") {
+            bannerState.collapsed = "true";
+          } else {
+            bannerState.collapsed = "false";
+          }
+        } else {
+          if(settings.default_collapsed_state == "collapsed") {
+            bannerState = { name: settings.cookie_name, collapsed: "false" }
+          } else {
+            bannerState = { name: settings.cookie_name, collapsed: "true" }
+          }
+        }
+        $.cookie("banner_collapsed", JSON.stringify(bannerState), { expires: cookieExpDate, path: '/' });
+      }
+    }
+  },
+  toggleIcon() {
+    return (toggleState === "expanded") ? "chevron-up" : "chevron-down";
+  },
+  toggleLabel() {
+    return (toggleState === "expanded") ? themePrefix("toggle.collapse_label") : themePrefix("toggle.expand_label");
+  }
+});
+
 api.createWidget("banner-column-icon", {
   tagName: "div.icon",
   html(attrs) {
     let columnIcon = columnIcons[attrs.column];
     if(columnIcon.includes("http") || columnIcon.includes("/uploads/")) {
       return h("img.responsive-img", { src: columnIcon });
-    } else {
+    } else if(columnIcon) {
       let covertedIcon = convertIconClass(columnIcons[attrs.column]);
       return iconNode(covertedIcon);
     }
+    return;
   }
 });
 
-function setCurrentExpDate(cookieExpDate) {
-  if($.cookie("banner_closed")) {
-    let closedCookie = JSON.parse($.cookie("banner_closed"));
-    if(closedCookie.name != settings.cookie_name) {
-      $.removeCookie("banner_closed", {path: '/'} );
-    } else {
-      $.cookie("banner_closed", JSON.stringify(closedCookie), { expires: cookieExpDate, path: '/' });
-    }
-  }
+api.createWidget("banner-content-widget", {
+  tagName: "div#banner-content_wrap" + setupBanner(),
+  html(attrs) {
 
-  if($.cookie("banner_collapsed")) {
-    let collapsedCookie = JSON.parse($.cookie("banner_collapsed"));
-    if(collapsedCookie.name != settings.cookie_name) {
-      $.removeCookie("banner_collapsed", {path: '/'} );
-    } else {
-      $.cookie("banner_collapsed", JSON.stringify(collapsedCookie), { expires: cookieExpDate, path: '/' });
-    }
-  }
-}
+    let columns = [];
 
-function setupBanner() {
-  if($.cookie("banner_closed")) {
-    let closedCookie = JSON.parse($.cookie("banner_closed"));
-    if(closedCookie.closed == "true" && settings.dismissible) {
-      $('.banner-box').addClass("hidden");
+    if(settings.first_column_content) {
+      columns.push(
+        h('div.first_column.single-box', [
+          this.attach('banner-column-icon', { column: 0 }),
+          h('div', { innerHTML: settings.first_column_content })
+        ])
+      );
     }
-  }
-  let collapsedCookie;
-  if($.cookie("banner_collapsed")) {
-    collapsedCookie = JSON.parse($.cookie("banner_collapsed"));
-  }
-  if(!$.cookie("banner_collapsed") && settings.collapsible && settings.default_collapsed_state == "collapsed" || collapsedCookie && collapsedCookie.collapsed == "true") {
-    $('#banner-content_wrap').addClass("hidden");
-    $('.d-icon-chevron-down').removeClass("hidden");
-    $('.d-icon-chevron-up').addClass("hidden");
-  }
-  else {
-    $('#banner-content_wrap').removeClass("hidden");
-    $('.d-icon-chevron-down').addClass("hidden");
-    $('.d-icon-chevron-up').removeClass("hidden");
-  }
-}
-function addClickEvents(cookieExpDate) {
-  $('.banner-box .close').click(function() {
-    $(".banner-box").addClass("hidden");
-    if(cookieExpDate) {
-      let bannerState = { name: settings.cookie_name, closed: "true" };
-      $.cookie("banner_closed", JSON.stringify(bannerState), { expires: cookieExpDate, path: '/' });
-    }
-  });
-  $(".banner-box .toggle").click(function() {
-    $("#banner-content_wrap").slideToggle();
-    $('.d-icon-chevron-down').toggle();
-    $('.d-icon-chevron-up').toggle();
-    if(cookieExpDate) {
-      let bannerState;
-      if($.cookie("banner_collapsed")) {
-        bannerState = JSON.parse($.cookie('banner_collapsed'));
-        bannerState.name = settings.cookie_name;
-        if(bannerState.collapsed == "false") {
-          bannerState.collapsed = "true";
-        } else {
-          bannerState.collapsed = "false";
-        }
-      } else {
-        if(settings.default_collapsed_state == "collapsed") {
-          bannerState = { name: settings.cookie_name, collapsed: "false" }
-        } else {
-          bannerState = { name: settings.cookie_name, collapsed: "true" }
-        }
-      }
-      $.cookie("banner_collapsed", JSON.stringify(bannerState), { expires: cookieExpDate, path: '/' });
-    }
-  });
-}
 
-api.modifyClass("component:site-header", { 
-  didInsertElement: function() {
-    this._super();
-    let rawDate = moment(settings.cookie_expiration_date);
-    if (rawDate.isValid()) {
-      let cookieExpDate = rawDate.toDate();
-      setCurrentExpDate(cookieExpDate);
-      addClickEvents(cookieExpDate);
-    } else {
-      $.removeCookie("banner_closed", {path: '/'} );
-      $.removeCookie("banner_collapsed", {path: '/'} );
-      addClickEvents(false);
+    if(settings.second_column_content) {
+      columns.push(
+        h('div.second_column.single-box', [
+          this.attach('banner-column-icon', { column: 1 }),
+          h('div', { innerHTML: settings.second_column_content })
+        ])
+      );
     }
-    setupBanner();
+
+    if(settings.third_column_content) {
+      columns.push(
+        h('div.third_column.single-box', [
+          this.attach('banner-column-icon', { column: 2 }),
+          h('div', { innerHTML: settings.third_column_content })
+        ])
+      );
+    }
+
+    if(settings.fourth_column_content) {
+      columns.push(
+        h('div.fourth_column.single-box', [
+          this.attach('banner-column-icon', { column: 3 }),
+          h('div', { innerHTML: settings.fourth_column_content })
+        ])
+      );
+    }
+
+    return h('div.row', columns);
   }
 });
 
 </script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/custom-banner/banner">
-  <section class="banner-box">
-  <div class="button-container">
-    {{#if (theme-setting 'dismissible')}}
-    <button type="button" class="close">
-      {{d-icon 'times'}}
-    </button>
-    {{/if}}
-    {{#if (theme-setting 'collapsible')}}
-    <button type="button" class="toggle">
-      {{d-icon 'chevron-down'}}{{d-icon 'chevron-up'}}
-    </button>
-    {{/if}}
-  </div>
-    <div class="container">
-      <div class="section-header">
-        {{{theme-setting 'main_heading_content'}}}
-      </div>
-      <div id="banner-content_wrap">
-        <div class="row">
-          {{#if (theme-setting 'first_column_content')}}
-          <div class="first_column single-box">
-            {{#if (theme-setting 'first_column_icon')}}
-              {{mount-widget widget="banner-column-icon" args=(hash column=0)}}
-            {{/if}}
-            <div>{{{theme-setting 'first_column_content'}}}</div>
-          </div>
-          {{/if}}
-          {{#if (theme-setting 'second_column_content')}}
-          <div class="second_column single-box">
-            {{#if (theme-setting 'second_column_icon')}}
-              {{mount-widget widget="banner-column-icon" args=(hash column=1)}}
-            {{/if}}
-            <div>{{{theme-setting 'second_column_content'}}}</div>
-          </div>
-          {{/if}}
-          {{#if (theme-setting 'third_column_content')}}
-          <div class="third_column single-box">
-            {{#if (theme-setting 'third_column_icon')}}
-              {{mount-widget widget="banner-column-icon" args=(hash column=2)}}
-            {{/if}}
-            <div>{{{theme-setting 'third_column_content'}}}</div>
-          </div>
-          {{/if}}
-          {{#if (theme-setting 'fourth_column_content')}}
-          <div class="fourth_column single-box">
-            {{#if (theme-setting 'fourth_column_icon')}}
-              {{mount-widget widget="banner-column-icon" args=(hash column=3)}}
-            {{/if}}
-            <div>{{{theme-setting 'fourth_column_content'}}}</div>
-          </div>
-          {{/if}}
-        </div>
-      </div>
-    </div>
-  </section>
+  {{mount-widget widget="banner-box-widget"}}
 </script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/above-main-container/banner-themes">
