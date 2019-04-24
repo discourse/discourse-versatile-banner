@@ -73,7 +73,9 @@ banner_background_image:
   type: string
   default: "https://i.imgur.com/k7SnZth.jpg"
   description: 
-    en: 'The source url for your background image. You can also upload an image to this theme component and use the url from that.'
+    en: 'The source url for your background image. Tip: You can upload an image to your main theme and use the url from that, 
+         but make sure that you do not use "Uploads" section of this component. Any uploads added to this component will be 
+         deleted whenever it is updated.'
 background_color:
   type: string
   default: "#EED4A1"
