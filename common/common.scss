@@ -58,6 +58,10 @@
     text-align: center;
     color: $secondary_text_color;
   }
+  
+  a {
+    color: $link_text_color;
+  }
 
   .section-header {
     padding-bottom: 20px;
