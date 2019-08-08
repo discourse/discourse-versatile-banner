@@ -70,7 +70,7 @@ api.createWidget("banner-box-widget", {
         h('div.container', [
           this.attach("banner-button-container-widget"),
           h('div.section-header', { innerHTML: settings.main_heading_content }),
-          this.attach('banner-content-widget') 
+          this.attach('banner-content-widget')
         ])
       ]
     }
@@ -223,12 +223,12 @@ api.createWidget("banner-content-widget", {
 
 <script type="text/x-handlebars" data-template-name="/connectors/above-main-container/banner-themes">
   {{#if (theme-setting 'show_for_members')}}
-    {{#if currentUser}}
+    {{#if currentUser.trust_level > 0}}
       {{plugin-outlet name="custom-banner"}}
     {{/if}}
   {{/if}}
-  {{#if (theme-setting 'show_for_anon')}}
-    {{#unless currentUser}}
+  {{#if (theme-setting 'show_for_new_members')}}
+    {{#unless currentUser.trust_level == 0}}
       {{plugin-outlet name="custom-banner"}}
     {{/unless}}
   {{/if}}
