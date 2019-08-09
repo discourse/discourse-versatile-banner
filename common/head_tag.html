@@ -19,6 +19,10 @@ else {
   cookieExpDate = moment().add(1, settings.cookie_lifespan).toDate();
 }
 
+api.modifyClass('model:user', {
+    isNewUser: this.Discourse.User._current.trust_level === 0
+});
+
 let toggleState;
 
 function setupBanner() {
@@ -222,13 +226,13 @@ api.createWidget("banner-content-widget", {
 </script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/above-main-container/banner-themes">
-  {{#if (theme-setting 'show_for_members')}}
-    {{#if currentUser.trust_level > 0}}
+  {{#if (theme-setting 'show_for_new_members')}}
+    {{#if this.currentUser.isNewUser}}
       {{plugin-outlet name="custom-banner"}}
     {{/if}}
   {{/if}}
-  {{#if (theme-setting 'show_for_new_members')}}
-    {{#unless currentUser.trust_level == 0}}
+  {{#if (theme-setting 'show_for_members')}}
+    {{#unless this.currentUser.isNewUser}}
       {{plugin-outlet name="custom-banner"}}
     {{/unless}}
   {{/if}}
