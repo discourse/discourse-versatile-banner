@@ -25,17 +25,17 @@
       float: right;
       padding: 5px;
       border: none;
-      color: #646464;
+      color: #E1E1E1;
       background: transparent;
       font-size: 1.5157em;
       cursor: pointer;
 
       svg {
-        color: #646464;
+        color: #E1E1E1;
       }
       .d-button-label {
         font-size: 1em;
-        color: #646464;
+        color: #E1E1E1;
       }
 
       &:hover {
@@ -58,7 +58,7 @@
     text-align: center;
     color: $secondary_text_color;
   }
-  
+
   a {
     color: $link_text_color;
   }
