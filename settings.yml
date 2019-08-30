@@ -97,12 +97,12 @@ link_text_color:
   description:
     en: 'The text color links within the banner.
         <br><br><br>
-        <h2>Banner Content Customization</h2>
+        <h2>Limited Banner Content Customization</h2>
         Customize the content of the banner with HTML. If you need to style your custom content
         with CSS, create a separate theme component. Leave the content blank to exclude a column.
         While a fourth column is provided, it will likely result in too much content for the
         available space. Be sure you are happy with your configuration across different brower widths.'
-main_heading_content:
+main_heading_content_lim:
   type: string
   textarea: true
   default: |
@@ -120,7 +120,7 @@ main_heading_content:
               </p>
             </div>
             <div class="colored-line"></div>
-first_column_content:
+first_column_content_lim:
   type: string
   textarea: true
   default: |
@@ -138,7 +138,7 @@ first_column_content:
                 <li>And the notes?</li>
               </ul>
             </div>
-second_column_content:
+second_column_content_lim:
   type: string
   textarea: true
   default: |
@@ -155,7 +155,7 @@ second_column_content:
             <div class="buttons" id="my-button">
               <a href="#" class="btn btn-icon-text">My new button</a>
             </div>
-third_column_content:
+third_column_content_lim:
   type: string
   textarea: true
   default: |
@@ -169,7 +169,34 @@ third_column_content:
               natoque penatibus et magnis dis parturient montes,
               nascetur ridiculus mus.
             </p>
-fourth_column_content:
+fourth_column_content_lim:
+  type: string
+  textarea: true
+  default: ''
+  description:
+    en: '<br><br>
+    <h2>Full Site Banner Content Customization</h2>
+    Customize the content of the banner with HTML. If you need to style your custom content
+    with CSS, create a separate theme component. Leave the content blank to exclude a column.
+    While a fourth column is provided, it will likely result in too much content for the
+    available space. Be sure you are happy with your configuration across different brower widths.'
+main_heading_content_full:
+  type: string
+  textarea: true
+  default: ''
+first_column_content_full:
+  type: string
+  textarea: true
+  default: ''
+second_column_content_full:
+  type: string
+  textarea: true
+  default: ''
+third_column_content_full:
+  type: string
+  textarea: true
+  default: ''
+fourth_column_content_full:
   type: string
   textarea: true
   default: ''
