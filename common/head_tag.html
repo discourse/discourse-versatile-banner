@@ -70,18 +70,19 @@ api.createWidget("banner-box-widget", {
     }
 
     const user = api.getCurrentUser();
+    var main_heading_content = '';
 
-    console.log(user)
-
-    {{#unless this.currentUser.isNewUser}}
-      {{plugin-outlet name="custom-banner"}}
-    {{/unless}}
+    if(user.trust_level == 0){
+      main_heading_content = settings.main_heading_content_lim;
+    }else if(user.trust_level > 0){
+      main_heading_content = settings.main_heading_content_full;
+    }
 
     if(!$.cookie("banner_closed") && (showOnHomepage || urlMatch)) {
       return [
         h('div.container', [
           this.attach("banner-button-container-widget"),
-          h('div.section-header', { innerHTML: settings.main_heading_content_lim }),
+          h('div.section-header', { innerHTML: main_heading_content }),
           this.attach('banner-content-widget')
         ])
       ]
@@ -186,41 +187,81 @@ api.createWidget("banner-content-widget", {
   html(attrs) {
 
     let columns = [];
+    const user = api.getCurrentUser();
 
-    if(settings.first_column_content_lim) {
-      columns.push(
-        h('div.first_column.single-box', [
-          this.attach('banner-column-icon', { column: 0 }),
-          h('div', { innerHTML: settings.first_column_content_lim })
-        ])
-      );
-    }
+    if(user.trust_level == 0){
 
-    if(settings.second_column_content_lim) {
-      columns.push(
-        h('div.second_column.single-box', [
-          this.attach('banner-column-icon', { column: 1 }),
-          h('div', { innerHTML: settings.second_column_content_lim })
-        ])
-      );
-    }
+      if(settings.first_column_content_lim) {
+        columns.push(
+          h('div.first_column.single-box', [
+            this.attach('banner-column-icon', { column: 0 }),
+            h('div', { innerHTML: settings.first_column_content_lim })
+          ])
+        );
+      }
 
-    if(settings.third_column_content_lim) {
-      columns.push(
-        h('div.third_column.single-box', [
-          this.attach('banner-column-icon', { column: 2 }),
-          h('div', { innerHTML: settings.third_column_content_lim })
-        ])
-      );
-    }
+      if(settings.second_column_content_lim) {
+        columns.push(
+          h('div.second_column.single-box', [
+            this.attach('banner-column-icon', { column: 1 }),
+            h('div', { innerHTML: settings.second_column_content_lim })
+          ])
+        );
+      }
 
-    if(settings.fourth_column_content_lim) {
-      columns.push(
-        h('div.fourth_column.single-box', [
-          this.attach('banner-column-icon', { column: 3 }),
-          h('div', { innerHTML: settings.fourth_column_content_lim })
-        ])
-      );
+      if(settings.third_column_content_lim) {
+        columns.push(
+          h('div.third_column.single-box', [
+            this.attach('banner-column-icon', { column: 2 }),
+            h('div', { innerHTML: settings.third_column_content_lim })
+          ])
+        );
+      }
+
+      if(settings.fourth_column_content_lim) {
+        columns.push(
+          h('div.fourth_column.single-box', [
+            this.attach('banner-column-icon', { column: 3 }),
+            h('div', { innerHTML: settings.fourth_column_content_lim })
+          ])
+        );
+      }
+    }else if(user.trust_level > 0){
+      if(settings.first_column_content_full) {
+        columns.push(
+          h('div.first_column.single-box', [
+            this.attach('banner-column-icon', { column: 0 }),
+            h('div', { innerHTML: settings.first_column_content_full })
+          ])
+        );
+      }
+
+      if(settings.first_column_content_full) {
+        columns.push(
+          h('div.second_column.single-box', [
+            this.attach('banner-column-icon', { column: 1 }),
+            h('div', { innerHTML: settings.first_column_content_full })
+          ])
+        );
+      }
+
+      if(settings.first_column_content_full) {
+        columns.push(
+          h('div.third_column.single-box', [
+            this.attach('banner-column-icon', { column: 2 }),
+            h('div', { innerHTML: settings.first_column_content_full })
+          ])
+        );
+      }
+
+      if(settings.first_column_content_full) {
+        columns.push(
+          h('div.fourth_column.single-box', [
+            this.attach('banner-column-icon', { column: 3 }),
+            h('div', { innerHTML: settings.first_column_content_full })
+          ])
+        );
+      }
     }
 
     return h('div.row', columns);
