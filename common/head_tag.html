@@ -236,29 +236,29 @@ api.createWidget("banner-content-widget", {
         );
       }
 
-      if(settings.first_column_content_full) {
+      if(settings.second_column_content_full) {
         columns.push(
           h('div.second_column.single-box', [
             this.attach('banner-column-icon', { column: 1 }),
-            h('div', { innerHTML: settings.first_column_content_full })
+            h('div', { innerHTML: settings.second_column_content_full })
           ])
         );
       }
 
-      if(settings.first_column_content_full) {
+      if(settings.third_column_content_full) {
         columns.push(
           h('div.third_column.single-box', [
             this.attach('banner-column-icon', { column: 2 }),
-            h('div', { innerHTML: settings.first_column_content_full })
+            h('div', { innerHTML: settings.third_column_content_full })
           ])
         );
       }
 
-      if(settings.first_column_content_full) {
+      if(settings.fourth_column_content_full) {
         columns.push(
           h('div.fourth_column.single-box', [
             this.attach('banner-column-icon', { column: 3 }),
-            h('div', { innerHTML: settings.first_column_content_full })
+            h('div', { innerHTML: settings.fourth_column_content_full })
           ])
         );
       }
