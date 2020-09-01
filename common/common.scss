@@ -183,8 +183,8 @@
 ////////////// Full Width //////////////
 
 @if $full_width_banner == "true" {
-  body {
-    overflow-x: hidden; // Needed to compensate for the overflow caused by the vertical scrollbar
+  #main {
+    overflow: hidden; // Needed to compensate for the overflow caused by the vertical scrollbar
 
     .banner-box {
       margin-top: -2em;
