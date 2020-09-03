@@ -202,6 +202,11 @@
       }
     }
   }
+
+  // No margin needed on mobile
+  .mobile-view #main .banner-box {
+    margin-top: 0;
+  }
 }
 
 @media screen and (max-width: 736px) {
