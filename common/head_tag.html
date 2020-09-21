@@ -39,7 +39,7 @@ function setupBanner() {
 
   if(!$.cookie("banner_collapsed") && settings.collapsible && settings.default_collapsed_state == "collapsed" || collapsedCookie && collapsedCookie.collapsed == "true") {
     toggleState = "collapsed";
-    return ".hidden"
+    return ".hidden-banner"
   } else {
     toggleState = "expanded";
     return ""
