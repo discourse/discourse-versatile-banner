@@ -4,10 +4,48 @@
   }
 }
 
+// Default positioning when outlet is shared
+#main > div.ember-view {
+  display: flex;
+  flex-direction: column;
+
+  .above-site-header-outlet {
+    order: -4;
+  }
+  .d-header-wrap {
+    order: -3;
+  }
+  .below-site-header-outlet {
+    order: -1;
+    & + .below-site-header-outlet {
+      order: -2;
+    }
+  }
+
+  #main-outlet {
+    max-width: calc(100% - 16px);
+    width: $large-width;
+  }
+}
+
+@if $swap_default_positioning == "true" {
+  #main > div.ember-view {
+    .below-site-header-outlet {
+      order: -2;
+      & + .below-site-header-outlet {
+        order: -1;
+      }
+    }
+  }
+}
+
 .banner-box {
+  width: $large-width;
+  max-width: calc(100% - 16px);
+  margin: 0 auto;
+  margin-top: 20px;
   color: $primary_text_color;
   position: relative;
-  margin-bottom: 20px;
   background-image: url($banner_background_image);
   background-size: cover;
   background-position: center center;
@@ -15,6 +53,7 @@
   background-color: $background_color;
 
   .button-container {
+    margin-right: 5px;
     position: absolute;
     z-index: z("base") + 1;
     right: 0;
@@ -126,6 +165,13 @@
   }
 }
 
+// Category Banners Tweaks
+.category-header {
+  #main .banner-box {
+    margin: 20px auto;
+  }
+}
+
 //-------------------------- Setting Based Rules --------------------------//
 //                      Modified using theme settings
 //-------------------------------------------------------------------------//
@@ -183,29 +229,22 @@
 ////////////// Full Width //////////////
 
 @if $full_width_banner == "true" {
-  #main {
-    overflow: hidden; // Needed to compensate for the overflow caused by the vertical scrollbar
+  #main .banner-box {
+    width: unset;
+    max-width: unset;
+    margin: 0;
 
-    .banner-box {
-      margin-top: -2em;
-      margin-left: calc(-50vw + 50%);
-      margin-right: calc(-50vw + 50%);
-
-      // Needed to compensate for the overflow caused by the vertical scrollbar
-      .button-container {
-        margin-right: 10px;
-      }
-
-      .container {
-        max-width: 85%;
-        margin: 0 auto;
-      }
+    .container {
+      max-width: 85%;
+      margin: 0 auto;
     }
   }
 
-  // No margin needed on mobile
-  .mobile-view #main .banner-box {
-    margin-top: 0;
+  // Category Banners Tweaks
+  .category-header {
+    #main .banner-box {
+      margin: 0;
+    }
   }
 }
 
@@ -245,12 +284,6 @@
   .fourth_column {
     width: 90%;
   }
-
-  // Compensation for the overflow caused by the
-  // vertical scrollbar not needed on mobile
-  .button-container {
-    margin-right: 0;
-  }
 }
 
 @media screen and (min-width: 736px) {
@@ -261,12 +294,10 @@
   }
 }
 
-// Adjust Discourse Category Banners if it is in place
-.category-header #main-outlet {
-  padding-top: 5.8572em !important;
-}
-.category-title-header {
-  margin-bottom: -65px !important;
+// Experimental mobile width tweaks.
+.mobile-view #main div.ember-view #main-outlet {
+  width: -webkit-fill-available;
+  width: -moz-available;
 }
 
 .hidden-banner {

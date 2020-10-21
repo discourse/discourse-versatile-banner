@@ -69,6 +69,11 @@ full_width_banner:
   default: false
   description: 
     en: 'Display the banner at full browser width'
+swap_default_positioning:
+  type: bool
+  default: false
+  description:
+    en: 'If there is another banner-related component active, use this to swap its position with the Versatile Banner'
 banner_background_image:
   type: string
   default: "https://i.imgur.com/k7SnZth.jpg"

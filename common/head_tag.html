@@ -1,6 +1,8 @@
 <script type="text/discourse-plugin" version="0.8.18">
 
 const { iconNode, convertIconClass } = require("discourse-common/lib/icon-library");
+const cookie = require("discourse/lib/cookie").default;
+const { removeCookie } = require("discourse/lib/cookie")
 const h = require("virtual-dom").h;
 
 let columnIcons = [
@@ -12,8 +14,8 @@ let columnIcons = [
 
 let cookieExpDate;
 if (settings.cookie_lifespan == "none") {
-  $.removeCookie("banner_closed", {path: '/'} );
-  $.removeCookie("banner_collapsed", {path: '/'} );
+  removeCookie("banner_closed", {path: '/'} );
+  removeCookie("banner_collapsed", {path: '/'} );
 }
 else {
   cookieExpDate = moment().add(1, settings.cookie_lifespan).toDate();
@@ -24,20 +26,20 @@ let toggleState;
 function setupBanner() {
   let collapsedCookie;
   let closedCookie;
-  if($.cookie("banner_collapsed")) {
-    collapsedCookie = JSON.parse($.cookie("banner_collapsed"));
+  if(cookie("banner_collapsed")) {
+    collapsedCookie = JSON.parse(cookie("banner_collapsed"));
     if(collapsedCookie.name != settings.cookie_name) {
-      $.removeCookie("banner_collapsed", {path: '/'} );
+      removeCookie("banner_collapsed", {path: '/'} );
     }
   }
-  if($.cookie("banner_closed")) {
-    closedCookie = JSON.parse($.cookie("banner_closed"));
+  if(cookie("banner_closed")) {
+    closedCookie = JSON.parse(cookie("banner_closed"));
     if(closedCookie.name != settings.cookie_name) {
-      $.removeCookie("banner_closed", {path: '/'} );
+      removeCookie("banner_closed", {path: '/'} );
     }
   }
 
-  if(!$.cookie("banner_collapsed") && settings.collapsible && settings.default_collapsed_state == "collapsed" || collapsedCookie && collapsedCookie.collapsed == "true") {
+  if(!cookie("banner_collapsed") && settings.collapsible && settings.default_collapsed_state == "collapsed" || collapsedCookie && collapsedCookie.collapsed == "true") {
     toggleState = "collapsed";
     return ".hidden-banner"
   } else {
@@ -65,7 +67,7 @@ api.createWidget("banner-box-widget", {
       urlMatch = regex.test(path);
     }
 
-    if(!$.cookie("banner_closed") && (showOnHomepage || urlMatch)) {
+    if(!cookie("banner_closed") && (showOnHomepage || urlMatch)) {
       return [
         h('div.container', [
           this.attach("banner-button-container-widget"),
@@ -119,7 +121,7 @@ api.createWidget("banner-button-container-widget", {
       $(".banner-box").addClass("hidden");
       if(cookieExpDate) {
         let bannerState = { name: settings.cookie_name, closed: "true" };
-        $.cookie("banner_closed", JSON.stringify(bannerState), { expires: cookieExpDate, path: '/' });
+        cookie("banner_closed", JSON.stringify(bannerState), { expires: cookieExpDate, path: '/' });
       }
     }
     else if (button == "toggle") {
@@ -128,8 +130,8 @@ api.createWidget("banner-button-container-widget", {
 
       if(cookieExpDate) {
         let bannerState;
-        if($.cookie("banner_collapsed")) {
-          bannerState = JSON.parse($.cookie('banner_collapsed'));
+        if(cookie("banner_collapsed")) {
+          bannerState = JSON.parse(cookie('banner_collapsed'));
           bannerState.name = settings.cookie_name;
           if(bannerState.collapsed == "false") {
             bannerState.collapsed = "true";
@@ -143,7 +145,7 @@ api.createWidget("banner-button-container-widget", {
             bannerState = { name: settings.cookie_name, collapsed: "true" }
           }
         }
-        $.cookie("banner_collapsed", JSON.stringify(bannerState), { expires: cookieExpDate, path: '/' });
+        cookie("banner_collapsed", JSON.stringify(bannerState), { expires: cookieExpDate, path: '/' });
       }
     }
   },
@@ -221,7 +223,7 @@ api.createWidget("banner-content-widget", {
   {{mount-widget widget="banner-box-widget"}}
 </script>
 
-<script type="text/x-handlebars" data-template-name="/connectors/above-main-container/banner-themes">
+<script type="text/x-handlebars" data-template-name="/connectors/below-site-header/banner-themes">
   {{#if (theme-setting 'show_for_members')}}
     {{#if currentUser}}
       {{plugin-outlet name="custom-banner"}}
