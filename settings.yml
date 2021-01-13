@@ -25,9 +25,10 @@ display_on_homepage:
     en: 'Display the banner on the homepage'
 url_must_contain:
   type: list
-  default: /c/|/t/
+  list_type: simple
+  default: /latest|/categories|/new|/unread|/top*|/tag/*|/tags/*|/c/*|/t/*
   description: 
-    en: 'If any of the above sets of characters appear in the URL, the banner will display'
+    en: 'Enter paths that should display the banner. Add <code>*</code> to the end of the path as a wildcard'
 dismissible:
   type: bool
   default: false
