@@ -215,3 +215,15 @@ third_column_icon:
 fourth_column_icon:
   type: string
   default: ''
+first_column_icon_link:
+  type: string
+  default: ''
+second_column_icon_link:
+  type: string
+  default: ''
+third_column_icon_link:
+  type: string
+  default: ''
+fourth_column_icon_link:
+  type: string
+  default: ''

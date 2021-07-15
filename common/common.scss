@@ -105,6 +105,27 @@
     color: $secondary_text_color;
   }
 
+  a.icon_link {
+    border: 0;
+    text-decoration: none;
+  }
+  a.icon_link:link {
+    border: 0;
+    text-decoration: none;
+  }
+  a.icon_link:visited {
+    border: 0;
+    text-decoration: none;
+  }
+  a.icon_link:hover {
+    border: 0;
+    text-decoration: none;
+  }
+  a.icon_link:active {
+    border: 0;
+    text-decoration: none;
+  }
+
   a {
     color: $link_text_color;
   }
