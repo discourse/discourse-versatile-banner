@@ -183,7 +183,9 @@ api.createWidget("banner-content-widget", {
     if(settings.first_column_content) {
       columns.push(
         h('div.first_column.single-box', [
-          h('a.icon_link', { attributes: { href: settings.first_column_icon_url } }, this.attach('banner-column-icon', { column: 0 })),
+          settings.first_column_icon_url
+            ? h('a.icon_link', { attributes: { href: settings.first_column_icon_url } }, this.attach('banner-column-icon', { column: 0 }))
+            : this.attach('banner-column-icon', { column: 0 }) ,
           h('div', { innerHTML: settings.first_column_content })
         ])
       );
@@ -192,7 +194,9 @@ api.createWidget("banner-content-widget", {
     if(settings.second_column_content) {
       columns.push(
         h('div.second_column.single-box', [
-          h('a.icon_link', { attributes: { href: settings.second_column_icon_url } }, this.attach('banner-column-icon', { column: 1 })),
+          settings.second_column_icon_url
+            ? h('a.icon_link', { attributes: { href: settings.second_column_icon_url } }, this.attach('banner-column-icon', { column: 1 }))
+            : this.attach('banner-column-icon', { column: 1 }) ,
           h('div', { innerHTML: settings.second_column_content })
         ])
       );
@@ -201,7 +205,9 @@ api.createWidget("banner-content-widget", {
     if(settings.third_column_content) {
       columns.push(
         h('div.third_column.single-box', [
-          h('a.icon_link', { attributes: { href: settings.third_column_icon_url } }, this.attach('banner-column-icon', { column: 2 })),
+          settings.third_column_icon_url
+            ? h('a.icon_link', { attributes: { href: settings.third_column_icon_url } }, this.attach('banner-column-icon', { column: 2 }))
+            : this.attach('banner-column-icon', { column: 2 }) ,
           h('div', { innerHTML: settings.third_column_content })
         ])
       );
@@ -210,7 +216,9 @@ api.createWidget("banner-content-widget", {
     if(settings.fourth_column_content) {
       columns.push(
         h('div.fourth_column.single-box', [
-          h('a.icon_link', { attributes: { href: settings.fourth_column_icon_url } }, this.attach('banner-column-icon', { column: 3 })),
+          settings.fourth_column_icon_url
+            ? h('a.icon_link', { attributes: { href: settings.fourth_column_icon_url } }, this.attach('banner-column-icon', { column: 3 }))
+            : this.attach('banner-column-icon', { column: 3 }) ,
           h('div', { innerHTML: settings.fourth_column_content })
         ])
       );
