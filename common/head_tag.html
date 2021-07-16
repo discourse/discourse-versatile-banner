@@ -185,8 +185,8 @@ api.createWidget("banner-content-widget", {
       columns.push(
         h('div.first_column.single-box', [
           ((settings.first_column_icon_link.length > 0)
-            ? h('a.icon_link', { attributes: { href: settings.first_column_icon_link } }, this.attach('banner-column-icon', { column: 0 })))
-            : this.attach('banner-column-icon', { column: 0 }) ,
+            ? h('a.icon_link', { attributes: { href: settings.first_column_icon_link } }, this.attach('banner-column-icon', { column: 0 }))
+            : this.attach('banner-column-icon', { column: 0 })) ,
           h('div', { innerHTML: settings.first_column_content })
         ])
       );
@@ -197,8 +197,8 @@ api.createWidget("banner-content-widget", {
       columns.push(
         h('div.second_column.single-box', [
           ((settings.second_column_icon_link.length > 0)
-            ? h('a.icon_link', { attributes: { href: settings.second_column_icon_link } }, this.attach('banner-column-icon', { column: 1 })))
-            : this.attach('banner-column-icon', { column: 1 }) ,
+            ? h('a.icon_link', { attributes: { href: settings.second_column_icon_link } }, this.attach('banner-column-icon', { column: 1 }))
+            : this.attach('banner-column-icon', { column: 1 })) ,
           h('div', { innerHTML: settings.second_column_content })
         ])
       );
@@ -209,8 +209,8 @@ api.createWidget("banner-content-widget", {
       columns.push(
         h('div.third_column.single-box', [
           ((settings.third_column_icon_link.length > 0)
-            ? h('a.icon_link', { attributes: { href: settings.third_column_icon_link } }, this.attach('banner-column-icon', { column: 2 })))
-            : this.attach('banner-column-icon', { column: 2 }) ,
+            ? h('a.icon_link', { attributes: { href: settings.third_column_icon_link } }, this.attach('banner-column-icon', { column: 2 }))
+            : this.attach('banner-column-icon', { column: 2 })) ,
           h('div', { innerHTML: settings.third_column_content })
         ])
       );
@@ -221,8 +221,8 @@ api.createWidget("banner-content-widget", {
       columns.push(
         h('div.fourth_column.single-box', [
           ((settings.fourth_column_icon_link.length > 0)
-            ? h('a.icon_link', { attributes: { href: settings.fourth_column_icon_link } }, this.attach('banner-column-icon', { column: 3 })))
-            : this.attach('banner-column-icon', { column: 3 }) ,
+            ? h('a.icon_link', { attributes: { href: settings.fourth_column_icon_link } }, this.attach('banner-column-icon', { column: 3 }))
+            : this.attach('banner-column-icon', { column: 3 })) ,
           h('div', { innerHTML: settings.fourth_column_content })
         ])
       );
