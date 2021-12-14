@@ -264,17 +264,6 @@
     margin-top: 1em;
   }
 
-  // Drop heading below main title
-  @if $dismissible == "true" or $collapsible == "true" {
-    .button-container {
-      button {
-        padding: 5px 5px;
-      }
-      .d-button-label {
-        display: none;
-      }
-    }
-  }
 
   // Make columns big enough to wrap
   .first_column,
