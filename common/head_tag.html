@@ -56,15 +56,18 @@ api.createWidget("banner-box-widget", {
 
     let showOnHomepage;
     if(settings.display_on_homepage) {
-      let hasSingleForwardSlash = new RegExp('[^\/]\/[^\/]');
-      showOnHomepage = !hasSingleForwardSlash.test(path);
+      showOnHomepage = path === "/";
     }
 
     let urlMatch;
     if(settings.url_must_contain.length) {
-      let escapedList = settings.url_must_contain.replace(/\//g, '\\/');
-      let regex = new RegExp(escapedList);
-      urlMatch = regex.test(path);
+      const allowedPaths = settings.url_must_contain.split("|");
+      urlMatch = allowedPaths.some((allowedPath) => {
+          if(allowedPath.slice(-1) === "*") {
+            return path.indexOf(allowedPath.slice(0, -1)) === 0;
+          }
+          return path === allowedPath;
+      });
     }
 
     if(!cookie("banner_closed") && (showOnHomepage || urlMatch)) {

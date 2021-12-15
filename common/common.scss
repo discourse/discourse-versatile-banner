@@ -1,11 +1,16 @@
 @if $display_on_desktop == "false" {
-  .banner-box {
+  .desktop-view .banner-box {
+    display: none !important;
+  }
+}
+@if $display_on_mobile == "false" {
+  .mobile-view .banner-box {
     display: none !important;
   }
 }
 
 // Default positioning when outlet is shared
-#main > div.ember-view {
+#main > div {
   display: flex;
   flex-direction: column;
 
@@ -29,7 +34,7 @@
 }
 
 @if $swap_default_positioning == "true" {
-  #main > div.ember-view {
+  #main > div {
     .below-site-header-outlet {
       order: -2;
       & + .below-site-header-outlet {
@@ -249,12 +254,6 @@
 }
 
 @media screen and (max-width: 736px) {
-  @if $display_on_mobile == "false" {
-    .banner-box {
-      display: none !important;
-    }
-  }
-
   // Wrap columns
   .banner-box .row {
     display: block;
@@ -286,16 +285,8 @@
   }
 }
 
-@media screen and (min-width: 736px) {
-  @if $display_on_desktop == "false" {
-    .banner-box {
-      display: none !important;
-    }
-  }
-}
-
 // Experimental mobile width tweaks.
-.mobile-view #main div.ember-view #main-outlet {
+.mobile-view #main > div #main-outlet {
   width: -webkit-fill-available;
   width: -moz-available;
 }
