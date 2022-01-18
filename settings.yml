@@ -97,6 +97,11 @@ secondary_text_color:
   default: "#FF6C00"
   description:
     en: 'The text color of the icon and text headings, and the button background color.'
+button_text_color:
+  type: string
+  default: "#FF6C00"
+  description:
+    en: 'The text color used for buttons.'
 link_text_color:
   type: string
   default: "#0f82af"
