@@ -229,12 +229,12 @@ api.createWidget("banner-content-widget", {
 <script type="text/x-handlebars" data-template-name="/connectors/below-site-header/banner-themes">
   {{#if (theme-setting 'show_for_members')}}
     {{#if currentUser}}
-      {{plugin-outlet name="custom-banner"}}
+      {{plugin-outlet name="custom-banner" tagName="span" connectorTagName="div"}}
     {{/if}}
   {{/if}}
   {{#if (theme-setting 'show_for_anon')}}
     {{#unless currentUser}}
-      {{plugin-outlet name="custom-banner"}}
+      {{plugin-outlet name="custom-banner" tagName="span" connectorTagName="div"}}
     {{/unless}}
   {{/if}}
 </script>
