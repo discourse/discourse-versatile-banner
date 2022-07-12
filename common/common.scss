@@ -166,6 +166,7 @@
       .btn.btn-icon-text {
         color: $button_text_color;
         background: $button_background_color;
+        border-color: $button_background_color;
       }
     }
   }
