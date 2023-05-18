@@ -56,13 +56,14 @@ cookie_lifespan:
     - month
     - year
   description:
-    en: 'The lifespan of the cookie used to remember if the banner has been closed, expanded, or collapsed.
-         If set to "none", NO cookies will be used with this component, and any previously created cookies 
-         related to the banner will be deleted the next time a user performs a full page load. The values are 
-         measured as a single unit, so setting "year" will be one year, "week" will be one week, etc.'
+    en:
+      'The lifespan of the cookie used to remember if the banner has been closed, expanded, or collapsed.
+      If set to "none", NO cookies will be used with this component, and any previously created cookies
+      related to the banner will be deleted the next time a user performs a full page load. The values are
+      measured as a single unit, so setting "year" will be one year, "week" will be one week, etc.'
 cookie_name:
   type: string
-  default: "v1"
+  default: 'v1'
   description:
     en: 'When important changes are made to the banner, you must change the cookie name to ensure all your users see the changes.'
 full_width_banner:
@@ -75,140 +76,149 @@ swap_default_positioning:
   default: false
   description:
     en: 'If there is another banner-related component active, use this to swap its position with the Versatile Banner'
+plugin_outlet:
+  type: enum
+  default: 'below-site-header'
+  choices:
+    - 'below-site-header'
+    - 'above-main-container'
+  description: below-site-header puts it above the sidebar, above-main-container puts it above the content to the side of the sidebar
 banner_background_image:
   type: string
-  default: "https://i.imgur.com/k7SnZth.jpg"
+  default: 'https://i.imgur.com/k7SnZth.jpg'
   description:
-    en: 'The source url for your background image. Tip: You can upload an image to your main theme and use the url from that, 
-         but make sure that you do not use "Uploads" section of this component. Any uploads added to this component will be 
-         deleted whenever it is updated.'
+    en:
+      'The source url for your background image. Tip: You can upload an image to your main theme and use the url from that,
+      but make sure that you do not use "Uploads" section of this component. Any uploads added to this component will be
+      deleted whenever it is updated.'
 banner_background_image_dark:
   type: string
-  default: ""
+  default: ''
   description:
     en: 'The source url for your background image when system dark mode is detected.'
 background_color:
   type: string
-  default: "#EED4A1"
+  default: '#EED4A1'
   description:
     en: 'Used in place of a background image'
 background_color_dark:
   type: string
-  default: ""
+  default: ''
   description:
     en: 'Used in place of a background image when system dark mode is detected.'
 primary_text_color:
   type: string
-  default: "#000"
+  default: '#000'
   description:
     en: 'The main text color of the banner'
 primary_text_color_dark:
   type: string
-  default: ""
+  default: ''
   description:
     en: 'The main text color of the banner when system dark mode is detected'
 secondary_text_color:
   type: string
-  default: "#FF6C00"
+  default: '#FF6C00'
   description:
     en: 'The text color of the icon and text headings, and the button background color.'
 secondary_text_color_dark:
   type: string
-  default: ""
+  default: ''
   description:
     en: 'The text color of the icon and text headings, and the button background color when system dark mode is detected.'
 link_text_color:
   type: string
-  default: "#0f82af"
+  default: '#0f82af'
   description:
     en: 'The text color of links within the banner.'
 link_text_color_dark:
   type: string
-  default: ""
+  default: ''
   description:
-    en: 'The text color of links within the banner when system dark mode is detected.
-        <br><br><br>
-        <h2>Banner Content Customization</h2>
-        Customize the content of the banner with HTML. If you need to style your custom content 
-        with CSS, create a separate theme component. Leave the content blank to exclude a column. 
-        While a fourth column is provided, it will likely result in too much content for the 
-        available space. Be sure you are happy with your configuration across different brower widths.'
+    en:
+      'The text color of links within the banner when system dark mode is detected.
+      <br><br><br>
+      <h2>Banner Content Customization</h2>
+      Customize the content of the banner with HTML. If you need to style your custom content
+      with CSS, create a separate theme component. Leave the content blank to exclude a column.
+      While a fourth column is provided, it will likely result in too much content for the
+      available space. Be sure you are happy with your configuration across different brower widths.'
 main_heading_content:
   type: string
   textarea: true
   default: |
-            <h2 class="x-title">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </h2>
-            <div class="colored-line"></div>
-            <div class="description">
-              <p>
-                Nulla ullamcorper augue vel sodales pellentesque. Sed 
-                vitae sapien sit amet mauris consequat malesuada. 
-                Vestibulum vitae iaculis nisl, vel aliquet velit. 
-                Fusce venenatis laoreet diam, non dictum nisl 
-                vestibulum non.
-              </p>
-            </div>
-            <div class="colored-line"></div>
+    <h2 class="x-title">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </h2>
+    <div class="colored-line"></div>
+    <div class="description">
+      <p>
+        Nulla ullamcorper augue vel sodales pellentesque. Sed 
+        vitae sapien sit amet mauris consequat malesuada. 
+        Vestibulum vitae iaculis nisl, vel aliquet velit. 
+        Fusce venenatis laoreet diam, non dictum nisl 
+        vestibulum non.
+      </p>
+    </div>
+    <div class="colored-line"></div>
 first_column_content:
   type: string
   textarea: true
   default: |
-            <h3>A simple box</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Sed id congue eros, sit amet suscipit libero. Nunc vitae 
-              placerat est.
-            </p>
-            <div class="banner-list">
-              <ul>
-                <li><a href="https://twitter.com/discourse" target="_blank">A tweet</a> to wake up my friends</li>
-                <li>Put the photos in the bag</li>
-                <li>Rearrange books in the study</li>
-                <li>And the notes?</li>
-              </ul>
-            </div>
+    <h3>A simple box</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed id congue eros, sit amet suscipit libero. Nunc vitae 
+      placerat est.
+    </p>
+    <div class="banner-list">
+      <ul>
+        <li><a href="https://twitter.com/discourse" target="_blank">A tweet</a> to wake up my friends</li>
+        <li>Put the photos in the bag</li>
+        <li>Rearrange books in the study</li>
+        <li>And the notes?</li>
+      </ul>
+    </div>
 second_column_content:
   type: string
   textarea: true
   default: |
-            <h3>Another simple box</h3>
-            <p>
-              Integer velit ante, 
-              <a href="https://discourse.org">DISCOURSE</a> 
-              amet tristique in, gravida at ligula. Sed gravida mauris id 
-              neque vestibulum semper. Suspendisse potenti. Nam 
-              nec maximus ligula. Ut eget semper est. Sed ornare 
-              sit amet justo eu rutrum. Integer sit amet facilisis ipsum.
-            </p>
+    <h3>Another simple box</h3>
+    <p>
+      Integer velit ante, 
+      <a href="https://discourse.org">DISCOURSE</a> 
+      amet tristique in, gravida at ligula. Sed gravida mauris id 
+      neque vestibulum semper. Suspendisse potenti. Nam 
+      nec maximus ligula. Ut eget semper est. Sed ornare 
+      sit amet justo eu rutrum. Integer sit amet facilisis ipsum.
+    </p>
 
-            <div class="buttons" id="my-button">
-              <a href="#" class="btn btn-icon-text">My new button</a>
-            </div>
+    <div class="buttons" id="my-button">
+      <a href="#" class="btn btn-icon-text">My new button</a>
+    </div>
 third_column_content:
   type: string
   textarea: true
   default: |
-            <h3>Yet another simple box</h3>
-            <p>
-              Pellentesque ut lacinia nunc, eu molestie nulla. 
-              Pellentesque viverra nisi urna, at hendrerit nisl 
-              sodales in. Morbi auctor sodales nisi, eget aliquam 
-              justo maximus in. Suspendisse a felis a massa 
-              elementum pellentesque quis eget dolor. Orci varius 
-              natoque penatibus et magnis dis parturient montes, 
-              nascetur ridiculus mus.
-            </p>
+    <h3>Yet another simple box</h3>
+    <p>
+      Pellentesque ut lacinia nunc, eu molestie nulla. 
+      Pellentesque viverra nisi urna, at hendrerit nisl 
+      sodales in. Morbi auctor sodales nisi, eget aliquam 
+      justo maximus in. Suspendisse a felis a massa 
+      elementum pellentesque quis eget dolor. Orci varius 
+      natoque penatibus et magnis dis parturient montes, 
+      nascetur ridiculus mus.
+    </p>
 fourth_column_content:
   type: string
   textarea: true
   default: ''
   description:
     en: '<br><br>
-        <h2>Column Sizes</h2>
-        Use a percentage to make columns more wide or narrow. When set to "auto", the column will fill the 
-        available space evenly with other "auto" columns.'
+      <h2>Column Sizes</h2>
+      Use a percentage to make columns more wide or narrow. When set to "auto", the column will fill the
+      available space evenly with other "auto" columns.'
 first_column_size:
   type: string
   default: 'auto'
@@ -223,11 +233,11 @@ fourth_column_size:
   default: ''
   description:
     en: '<br><br>
-        <h2>Column Icons</h2>
-        Use font awesome or a link to an image for the icon at the top of the columns.
-        Accepted font awesome formats: <b>fa-icon</b>, <b>far fa-icon</b> or <b>fab fa-icon</b>. 
-        <a href="https://fontawesome.com/icons?d=gallery&m=free" target="_blank">Click Here</a> 
-        to view the list of available icons.'
+      <h2>Column Icons</h2>
+      Use font awesome or a link to an image for the icon at the top of the columns.
+      Accepted font awesome formats: <b>fa-icon</b>, <b>far fa-icon</b> or <b>fab fa-icon</b>.
+      <a href="https://fontawesome.com/icons?d=gallery&m=free" target="_blank">Click Here</a>
+      to view the list of available icons.'
 first_column_icon:
   type: string
   default: 'cog'
