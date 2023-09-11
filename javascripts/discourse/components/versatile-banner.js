@@ -9,6 +9,7 @@ import I18n from "I18n";
 export default class VersatileBanner extends Component {
   @service router;
   @service site;
+  @service currentUser;
 
   cookieClosed = cookie("banner_closed");
   cookieCollapsed = cookie("banner_collapsed");
@@ -54,7 +55,14 @@ export default class VersatileBanner extends Component {
     }
   }
 
-  get shouldShow() {
+  get displayForUser() {
+    return (
+      (settings.show_for_members && this.currentUser) ||
+      (settings.show_for_anon && !this.currentUser)
+    );
+  }
+
+  get showOnRoute() {
     const path = this.router.currentURL;
 
     if (
@@ -73,6 +81,10 @@ export default class VersatileBanner extends Component {
         return path === allowedPath;
       });
     }
+  }
+
+  get shouldShow() {
+    return this.displayForUser && this.showOnRoute;
   }
 
   get toggleLabel() {
