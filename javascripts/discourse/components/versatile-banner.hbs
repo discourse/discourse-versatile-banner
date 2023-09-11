@@ -1,8 +1,6 @@
 {{#if this.shouldShow}}
-
   {{#unless this.bannerClosed}}
     <div class="banner-box">
-      new
       <div class="container">
         <div class="button-container">
           {{#if (theme-setting "dismissible")}}
@@ -24,27 +22,24 @@
             />
           {{/if}}
         </div>
-
         <div class="section-header">
           {{html-safe (theme-setting "main_heading_content")}}
         </div>
-
-        {{#unless this.bannerHidden}}
-          <div id="banner-content_wrap">
-            <div class="row">
-              {{#each this.columnData as |data index|}}
-                <VersatileBannerColumn
-                  @columnContent={{data.content}}
-                  @icon={{get this.columnIcons index}}
-                  @columnClass={{data.class}}
-                />
-              {{/each}}
-            </div>
+        <div
+          id="banner-content_wrap"
+          class={{if this.bannerCollapsed "--banner-collapsed"}}
+        >
+          <div class="row">
+            {{#each this.columnData as |data|}}
+              <VersatileBannerColumn
+                @columnContent={{data.content}}
+                @icon={{data.icon}}
+                @columnClass={{data.class}}
+              />
+            {{/each}}
           </div>
-        {{/unless}}
+        </div>
       </div>
     </div>
-
   {{/unless}}
-
 {{/if}}

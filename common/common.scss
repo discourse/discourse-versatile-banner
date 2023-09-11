@@ -291,6 +291,18 @@
   width: -moz-available;
 }
 
-.hidden-banner {
-  display: none;
+// new collapse animation to replace JQuery
+// we can't animate with auto height, so we need a big max-height to cover variable content
+// if the content is taller than the max-height, this will need to be adjusted
+// but if it's too large, clicking collapse animation will feel laggy
+
+#banner-content_wrap {
+  overflow: hidden;
+  max-height: 1000px;
+  transition: max-height 1s ease;
+
+  &.--banner-collapsed {
+    max-height: 0;
+    transition: max-height 0.5s ease;
+  }
 }

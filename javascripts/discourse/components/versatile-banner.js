@@ -1,22 +1,49 @@
 import Component from "@glimmer/component";
-
+import { inject as service } from "@ember/service";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
-
-import { defaultHomepage } from "discourse/lib/utilities";
 import cookie, { removeCookie } from "discourse/lib/cookie";
-
-import { inject as service } from "@ember/service";
+import { defaultHomepage } from "discourse/lib/utilities";
+import I18n from "I18n";
 
 export default class VersatileBanner extends Component {
   @service router;
   @service site;
-  @tracked bannerClosed = cookie("banner_closed") || false;
-  @tracked bannerHidden = cookie("banner_collapsed")
-    ? JSON.parse(cookie("banner_collapsed")).collapsed
-    : settings.default_collapsed_state == "collapsed"
-    ? true
-    : false;
+
+  cookieClosed = cookie("banner_closed");
+  cookieCollapsed = cookie("banner_collapsed");
+  isDefaultCollapsed = settings.default_collapsed_state === "collapsed";
+  collapsedFromCookie = this.cookieCollapsed
+    ? JSON.parse(this.cookieCollapsed).collapsed
+    : null;
+  columnData = [
+    {
+      content: settings.first_column_content,
+      class: "first_column",
+      icon: settings.first_column_icon,
+    },
+    {
+      content: settings.second_column_content,
+      class: "second_column",
+      icon: settings.second_column_icon,
+    },
+    {
+      content: settings.third_column_content,
+      class: "third_column",
+      icon: settings.third_column_icon,
+    },
+    {
+      content: settings.fourth_column_content,
+      class: "fourth_column",
+      icon: settings.fourth_column_icon,
+    },
+  ];
+
+  @tracked bannerClosed = this.cookieClosed || false;
+  @tracked bannerCollapsed =
+    this.collapsedFromCookie !== null
+      ? this.collapsedFromCookie
+      : this.isDefaultCollapsed;
 
   get cookieExpirationDate() {
     if (settings.cookie_lifespan == "none") {
@@ -28,65 +55,34 @@ export default class VersatileBanner extends Component {
   }
 
   get shouldShow() {
-    // todo get this (fully) working
+    const path = this.router.currentURL;
 
-    const path = window.location.pathname;
-    let urlMatch = false;
-    if (settings.display_on_homepage) {
-      return this.router.currentRouteName === `discovery.${defaultHomepage()}`;
+    if (
+      settings.display_on_homepage &&
+      this.router.currentRouteName === `discovery.${defaultHomepage()}`
+    ) {
+      return true;
     }
 
     if (settings.url_must_contain.length) {
       const allowedPaths = settings.url_must_contain.split("|");
-      urlMatch = allowedPaths.some((allowedPath) => {
+      return allowedPaths.some((allowedPath) => {
         if (allowedPath.slice(-1) === "*") {
           return path.indexOf(allowedPath.slice(0, -1)) === 0;
         }
         return path === allowedPath;
       });
-
-      return urlMatch;
     }
   }
 
   get toggleLabel() {
-    return this.bannerHidden
+    return this.bannerCollapsed
       ? I18n.t(themePrefix("toggle.expand_label"))
       : I18n.t(themePrefix("toggle.collapse_label"));
   }
 
   get toggleIcon() {
-    return this.bannerHidden ? "chevron-down" : "chevron-up";
-  }
-
-  get columnIcons() {
-    return [
-      settings.first_column_icon,
-      settings.second_column_icon,
-      settings.third_column_icon,
-      settings.fourth_column_icon,
-    ];
-  }
-
-  get columnData() {
-    return [
-      {
-        content: settings.first_column_content,
-        class: "first_column",
-      },
-      {
-        content: settings.second_column_content,
-        class: "second_column",
-      },
-      {
-        content: settings.third_column_content,
-        class: "third_column",
-      },
-      {
-        content: settings.fourth_column_content,
-        class: "fourth_column",
-      },
-    ];
+    return this.bannerCollapsed ? "chevron-down" : "chevron-up";
   }
 
   @action
@@ -104,19 +100,19 @@ export default class VersatileBanner extends Component {
 
   @action
   toggleBanner() {
-    this.bannerHidden = !this.bannerHidden;
+    this.bannerCollapsed = !this.bannerCollapsed;
     let bannerState = {
       name: settings.cookie_name,
-      collapsed: this.bannerHidden,
+      collapsed: this.bannerCollapsed,
     };
 
     if (this.cookieExpirationDate) {
-      if (cookie("banner_collapsed")) {
-        bannerState = JSON.parse(cookie("banner_collapsed"));
-        bannerState.collapsed = this.bannerHidden;
+      if (this.cookieCollapsed) {
+        bannerState = JSON.parse(this.cookieCollapsed);
+        bannerState.collapsed = this.bannerCollapsed;
       }
     } else {
-      bannerState.collapsed = this.bannerHidden;
+      bannerState.collapsed = this.bannerCollapsed;
     }
 
     cookie("banner_collapsed", JSON.stringify(bannerState), {
