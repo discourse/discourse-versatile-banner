@@ -46,6 +46,12 @@ full_width_banner:
 swap_default_positioning:
   type: bool
   default: false
+plugin_outlet:
+  type: enum
+  default: "below-site-header"
+  choices:
+    - "below-site-header"
+    - "above-main-container"
 banner_background_image:
   type: string
   default: "https://i.imgur.com/k7SnZth.jpg"

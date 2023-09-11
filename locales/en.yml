@@ -22,6 +22,7 @@ en:
       cookie_name: "When important changes are made to the banner, you must change the cookie name to ensure all your users see the changes."
       full_width_banner: "Display the banner at full browser width"
       swap_default_positioning: "If there is another banner-related component active, use this to swap its position with the Versatile Banner"
+      plugin_outlet: "below-site-header puts it above the sidebar, above-main-container puts it above the content to the side of the sidebar"
       banner_background_image: 'The source url for your background image. Tip: You can upload an image to your main theme and use the url from that, but make sure that you do not use "Uploads" section of this component. Any uploads added to this component will be deleted whenever it is updated.'
       banner_background_image_dark: "The source url for your background image when system dark mode is detected."
       background_color: "Used in place of a background image"

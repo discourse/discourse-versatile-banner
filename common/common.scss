@@ -291,6 +291,10 @@
   width: -moz-available;
 }
 
+.above-main-container-outlet.banner-themes {
+  margin-bottom: 1.75em;
+}
+
 // new collapse animation to replace JQuery
 // we can't animate with auto height, so we need a big max-height to cover variable content
 // if the content is taller than the max-height, this will need to be adjusted
