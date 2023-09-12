@@ -7,3 +7,31 @@ en:
     title: Expand/Collapse the banner
     collapse_label: Collapse
     expand_label: Expand
+  theme_metadata:
+    settings:
+      show_for_members: "Display the banner for users logged into the forum"
+      show_for_anon: "Display the banner for anonymous users"
+      display_on_mobile: "Display the banner on mobile devices"
+      display_on_desktop: "Display the banner on desktop computers"
+      display_on_homepage: "Display the banner on the homepage"
+      url_must_contain: "Enter paths that should display the banner. Add <code>*</code> to the end of the path as a wildcard"
+      dismissible: "Allow the banner to be closed by users"
+      collapsible: "Allow the banner to be expanded and collapsed by users"
+      default_collapsed_state: "Default collapsed state when collapsible setting is enabled"
+      cookie_lifespan: 'The lifespan of the cookie used to remember if the banner has been closed, expanded, or collapsed. If set to "none", NO cookies will be used with this component, and any previously created cookies related to the banner will be deleted the next time a user performs a full page load. The values are measured as a single unit, so setting "year" will be one year, "week" will be one week, etc.'
+      cookie_name: "When important changes are made to the banner, you must change the cookie name to ensure all your users see the changes."
+      full_width_banner: "Display the banner at full browser width"
+      swap_default_positioning: "If there is another banner-related component active, use this to swap its position with the Versatile Banner"
+      plugin_outlet: "below-site-header puts it above the sidebar, above-main-container puts it above the content to the side of the sidebar"
+      banner_background_image: 'The source url for your background image. Tip: You can upload an image to your main theme and use the url from that, but make sure that you do not use "Uploads" section of this component. Any uploads added to this component will be deleted whenever it is updated.'
+      banner_background_image_dark: "The source url for your background image when system dark mode is detected."
+      background_color: "Used in place of a background image"
+      background_color_dark: "Used in place of a background image when system dark mode is detected."
+      primary_text_color: "The main text color of the banner"
+      primary_text_color_dark: "The main text color of the banner when system dark mode is detected"
+      secondary_text_color: "The text color of the icon and text headings, and the button background color."
+      secondary_text_color_dark: "The text color of the icon and text headings, and the button background color when system dark mode is detected."
+      link_text_color: "The text color of links within the banner."
+      link_text_color_dark: "The text color of links within the banner when system dark mode is detected. <br><br><br><h2>Banner Content Customization</h2> Customize the content of the banner with HTML. If you need to style your custom content with CSS, create a separate theme component. Leave the content blank to exclude a column. While a fourth column is provided, it will likely result in too much content for the available space. Be sure you are happy with your configuration across different brower widths."
+      fourth_column_content: '<br><br><h2>Column Sizes</h2>Use a percentage to make columns more wide or narrow. When set to "auto", the column will fill the available space evenly with other "auto" columns.'
+      fourth_column_size: '<br><br><h2>Column Icons</h2>Use font awesome or a link to an image for the icon at the top of the columns. Accepted font awesome formats: <b>fa-icon</b>, <b>far fa-icon</b> or <b>fab fa-icon</b>. <a href="https://fontawesome.com/icons?d=gallery&m=free" target="_blank">Click Here</a> to view the list of available icons.'

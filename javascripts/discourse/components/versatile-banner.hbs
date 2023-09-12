@@ -1,0 +1,45 @@
+{{#if this.shouldShow}}
+  {{#unless this.bannerClosed}}
+    <div class="banner-box">
+      <div class="container">
+        <div class="button-container">
+          {{#if (theme-setting "dismissible")}}
+            <DButton
+              @action={{this.closeBanner}}
+              @translatedLabel={{theme-i18n "close.label"}}
+              @translatedTitle={{theme-i18n "close.title"}}
+              @icon="times"
+              class="close"
+            />
+          {{/if}}
+          {{#if (theme-setting "collapsible")}}
+            <DButton
+              @action={{this.toggleBanner}}
+              @translatedLabel={{this.toggleLabel}}
+              @translatedTitle={{theme-i18n "toggle.title"}}
+              @icon={{this.toggleIcon}}
+              class="toggle"
+            />
+          {{/if}}
+        </div>
+        <div class="section-header">
+          {{html-safe (theme-setting "main_heading_content")}}
+        </div>
+        <div
+          id="banner-content_wrap"
+          class={{if this.bannerCollapsed "--banner-collapsed"}}
+        >
+          <div class="row">
+            {{#each this.columnData as |data|}}
+              <VersatileBannerColumn
+                @columnContent={{data.content}}
+                @icon={{data.icon}}
+                @columnClass={{data.class}}
+              />
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/unless}}
+{{/if}}
