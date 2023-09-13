@@ -10,6 +10,12 @@ export default class VersatileBanner extends Component {
   @service router;
   @service site;
   @service currentUser;
+  @tracked bannerClosed = this.cookieClosed || false;
+  @tracked
+  bannerCollapsed =
+    this.collapsedFromCookie !== null
+      ? this.collapsedFromCookie
+      : this.isDefaultCollapsed;
 
   cookieClosed = cookie("banner_closed");
   cookieCollapsed = cookie("banner_collapsed");
@@ -40,14 +46,8 @@ export default class VersatileBanner extends Component {
     },
   ];
 
-  @tracked bannerClosed = this.cookieClosed || false;
-  @tracked bannerCollapsed =
-    this.collapsedFromCookie !== null
-      ? this.collapsedFromCookie
-      : this.isDefaultCollapsed;
-
   get cookieExpirationDate() {
-    if (settings.cookie_lifespan == "none") {
+    if (settings.cookie_lifespan === "none") {
       removeCookie("banner_closed", { path: "/" });
       removeCookie("banner_collapsed", { path: "/" });
     } else {
