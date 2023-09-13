@@ -1,13 +1,31 @@
-@function dark-if-set($dark, $light){
-  @if $dark != '' { @return $dark; } 
-  @else { @return $light; }
+@function dark-if-set($dark, $light) {
+  @if $dark != "" {
+    @return $dark;
+  } @else {
+    @return $light;
+  }
 }
 
-$bg-color: dark-light-choose($background_color, dark-if-set($background_color_dark, $background_color));
-$primary-text: dark-light-choose($primary_text_color, dark-if-set($primary_text_color_dark, $primary_text_color));
-$secondary-text: dark-light-choose($secondary_text_color, dark-if-set($secondary_text_color_dark, $secondary_text_color));
-$link-text: dark-light-choose($link_text_color, dark-if-set($link_text_color_dark, $link_text_color));
-$bg-img: url(dark-light-choose($banner_background_image, dark-if-set($banner_background_image_dark, $banner_background_image)));
+$bg-color: dark-light-choose(
+  $background_color,
+  dark-if-set($background_color_dark, $background_color)
+);
+$primary-text: dark-light-choose(
+  $primary_text_color,
+  dark-if-set($primary_text_color_dark, $primary_text_color)
+);
+$secondary-text: dark-light-choose(
+  $secondary_text_color,
+  dark-if-set($secondary_text_color_dark, $secondary_text_color)
+);
+$link-text: dark-light-choose(
+  $link_text_color,
+  dark-if-set($link_text_color_dark, $link_text_color)
+);
+$bg-img: url(dark-light-choose(
+  $banner_background_image,
+  dark-if-set($banner_background_image_dark, $banner_background_image)
+));
 
 :root {
   --banner-bg-color: #{$bg-color};
