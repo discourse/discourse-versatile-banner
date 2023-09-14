@@ -27,7 +27,10 @@
         </div>
         <div
           id="banner-content_wrap"
-          class={{if this.bannerCollapsed "--banner-collapsed"}}
+          class={{if
+            (and (theme-setting "collapsible") this.bannerCollapsed)
+            "--banner-collapsed"
+          }}
         >
           <div class="row">
             {{#each this.columnData as |data|}}
