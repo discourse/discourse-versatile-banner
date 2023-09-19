@@ -5,6 +5,7 @@ import { action } from "@ember/object";
 import cookie, { removeCookie } from "discourse/lib/cookie";
 import { defaultHomepage } from "discourse/lib/utilities";
 import I18n from "I18n";
+import { convertIconClass } from "discourse-common/lib/icon-library";
 
 export default class VersatileBanner extends Component {
   @service router;
@@ -27,22 +28,22 @@ export default class VersatileBanner extends Component {
     {
       content: settings.first_column_content,
       class: "first_column",
-      icon: settings.first_column_icon,
+      icon: convertIconClass(settings.first_column_icon),
     },
     {
       content: settings.second_column_content,
       class: "second_column",
-      icon: settings.second_column_icon,
+      icon: convertIconClass(settings.second_column_icon),
     },
     {
       content: settings.third_column_content,
       class: "third_column",
-      icon: settings.third_column_icon,
+      icon: convertIconClass(settings.third_column_icon),
     },
     {
       content: settings.fourth_column_content,
       class: "fourth_column",
-      icon: settings.fourth_column_icon,
+      icon: convertIconClass(settings.fourth_column_icon),
     },
   ];
 
