@@ -1,0 +1,9 @@
+{
+  "name": "discourse-versatile-banner",
+  "repository": "https://github.com/discourse/discourse-versatile-banner",
+  "author": "Discourse",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-discourse": "latest"
+  }
+}

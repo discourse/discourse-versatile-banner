@@ -1,0 +1,14 @@
+<div class="{{@columnClass}} single-box">
+  {{#if @icon}}
+    <div class="icon">
+      {{#if this.isHttpLink}}
+        <img class="responsive-img" src={{@icon}} alt="Icon" />
+      {{else}}
+        {{d-icon @icon}}
+      {{/if}}
+    </div>
+  {{/if}}
+  <div>
+    {{html-safe @columnContent}}
+  </div>
+</div>

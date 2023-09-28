@@ -49,13 +49,13 @@
   max-width: calc(100% - 16px);
   margin: 0 auto;
   margin-top: 20px;
-  color: $primary_text_color;
+  color: var(--banner-primary-text);
   position: relative;
-  background-image: url($banner_background_image);
+  background-image: var(--banner-bg-img);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-color: $background_color;
+  background-color: var(--banner-bg-color);
 
   .button-container {
     margin-right: 5px;
@@ -102,11 +102,11 @@
   h2,
   h3 {
     text-align: center;
-    color: $secondary_text_color;
+    color: var(--banner-secondary-text);
   }
 
   a {
-    color: $link_text_color;
+    color: var(--banner-link-text);
   }
 
   .section-header {
@@ -121,7 +121,7 @@
       margin: auto;
       width: 165px;
       height: 1px;
-      background: $secondary_text_color;
+      background: var(--banner-secondary-text);
     }
 
     .description p {
@@ -144,7 +144,7 @@
 
       .icon {
         font-size: 70px;
-        color: $secondary_text_color;
+        color: var(--banner-secondary-text);
 
         .responsive-img {
           vertical-align: -0.125em;
@@ -293,6 +293,22 @@
   width: -moz-available;
 }
 
-.hidden-banner {
-  display: none;
+.above-main-container-outlet.banner-themes {
+  margin-bottom: 1.75em;
+}
+
+// new collapse animation to replace JQuery
+// we can't animate with auto height, so we need a big max-height to cover variable content
+// if the content is taller than the max-height, this will need to be adjusted
+// but if it's too large, clicking collapse animation will feel laggy
+
+#banner-content_wrap {
+  overflow: hidden;
+  max-height: 1000px;
+  transition: max-height 1s ease;
+
+  &.--banner-collapsed {
+    max-height: 0;
+    transition: max-height 0.5s ease;
+  }
 }
