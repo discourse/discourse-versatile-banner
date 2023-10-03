@@ -292,7 +292,9 @@
 }
 
 .above-main-container-outlet.banner-themes {
-  margin-bottom: 1.75em;
+  .banner-box {
+    margin-bottom: 1.5em;
+  }
 }
 
 // new collapse animation to replace JQuery
