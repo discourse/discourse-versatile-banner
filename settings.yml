@@ -52,6 +52,7 @@ plugin_outlet:
   choices:
     - "below-site-header"
     - "above-main-container"
+  refresh: true
 banner_background_image:
   type: string
   default: "https://i.imgur.com/k7SnZth.jpg"
@@ -92,10 +93,10 @@ main_heading_content:
     <div class="colored-line"></div>
     <div class="description">
       <p>
-        Nulla ullamcorper augue vel sodales pellentesque. Sed 
-        vitae sapien sit amet mauris consequat malesuada. 
-        Vestibulum vitae iaculis nisl, vel aliquet velit. 
-        Fusce venenatis laoreet diam, non dictum nisl 
+        Nulla ullamcorper augue vel sodales pellentesque. Sed
+        vitae sapien sit amet mauris consequat malesuada.
+        Vestibulum vitae iaculis nisl, vel aliquet velit.
+        Fusce venenatis laoreet diam, non dictum nisl
         vestibulum non.
       </p>
     </div>
@@ -106,8 +107,8 @@ first_column_content:
   default: |
     <h3>A simple box</h3>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Sed id congue eros, sit amet suscipit libero. Nunc vitae 
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Sed id congue eros, sit amet suscipit libero. Nunc vitae
       placerat est.
     </p>
     <div class="banner-list">
@@ -124,11 +125,11 @@ second_column_content:
   default: |
     <h3>Another simple box</h3>
     <p>
-      Integer velit ante, 
-      <a href="https://discourse.org">DISCOURSE</a> 
-      amet tristique in, gravida at ligula. Sed gravida mauris id 
-      neque vestibulum semper. Suspendisse potenti. Nam 
-      nec maximus ligula. Ut eget semper est. Sed ornare 
+      Integer velit ante,
+      <a href="https://discourse.org">DISCOURSE</a>
+      amet tristique in, gravida at ligula. Sed gravida mauris id
+      neque vestibulum semper. Suspendisse potenti. Nam
+      nec maximus ligula. Ut eget semper est. Sed ornare
       sit amet justo eu rutrum. Integer sit amet facilisis ipsum.
     </p>
     <div class="buttons" id="my-button">
@@ -140,12 +141,12 @@ third_column_content:
   default: |
     <h3>Yet another simple box</h3>
     <p>
-      Pellentesque ut lacinia nunc, eu molestie nulla. 
-      Pellentesque viverra nisi urna, at hendrerit nisl 
-      sodales in. Morbi auctor sodales nisi, eget aliquam 
-      justo maximus in. Suspendisse a felis a massa 
-      elementum pellentesque quis eget dolor. Orci varius 
-      natoque penatibus et magnis dis parturient montes, 
+      Pellentesque ut lacinia nunc, eu molestie nulla.
+      Pellentesque viverra nisi urna, at hendrerit nisl
+      sodales in. Morbi auctor sodales nisi, eget aliquam
+      justo maximus in. Suspendisse a felis a massa
+      elementum pellentesque quis eget dolor. Orci varius
+      natoque penatibus et magnis dis parturient montes,
       nascetur ridiculus mus.
     </p>
 fourth_column_content:
