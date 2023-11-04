@@ -113,7 +113,7 @@
     padding-bottom: 20px;
 
     .x-title {
-      padding: 25px 65px;
+      padding: 10px 50px;
       margin: 0;
     }
 
@@ -260,21 +260,10 @@
   }
 
   .banner-box .section-header .x-title {
-    padding: 15px;
+    padding: 7px;
     margin-top: 1em;
   }
 
-  // Drop heading below main title
-  @if $dismissible == "true" or $collapsible == "true" {
-    .button-container {
-      button {
-        padding: 5px 5px;
-      }
-      .d-button-label {
-        display: none;
-      }
-    }
-  }
 
   // Make columns big enough to wrap
   .first_column,
