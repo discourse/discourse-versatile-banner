@@ -164,7 +164,9 @@
       }
 
       .btn.btn-icon-text {
-        background: var(--banner-secondary-text);
+        color: $button_text_color;
+        background: $button_background_color;
+        border-color: $button_background_color;
       }
     }
   }
