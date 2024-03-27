@@ -1,11 +1,11 @@
 import Component from "@glimmer/component";
-import { inject as service } from "@ember/service";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
+import { service } from "@ember/service";
 import cookie, { removeCookie } from "discourse/lib/cookie";
 import { defaultHomepage } from "discourse/lib/utilities";
-import I18n from "I18n";
 import { convertIconClass } from "discourse-common/lib/icon-library";
+import I18n from "I18n";
 
 export default class VersatileBanner extends Component {
   @service router;
