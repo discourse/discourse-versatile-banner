@@ -4,4 +4,26 @@
 # To work with us on translations, join this project:
 # https://translate.discourse.org/
 
+---
 he:
+  close:
+    title: סגירת הכרזה
+    label: סגירה
+  toggle:
+    title: הרחבת/צמצום הכרזה
+    collapse_label: צמצום
+    expand_label: הרחבה
+  theme_metadata:
+    settings:
+      show_for_members: "הצגת הכרזה למשתמשים שנכנסו עם משתמש לפורום"
+      show_for_anon: "הצגת הכרזה למשתמשים אלמוניים"
+      display_on_mobile: "הצגת הכרזה דרך מכשירים ניידים"
+      display_on_desktop: "הצגת הכרזה דרך מחשבים"
+      display_on_homepage: "הצגת הכרזה בעמוד הבית"
+      url_must_contain: "נא למלא נתיבים שאמורים להציג את הכרזה. הוספת <code>*</code> לסוף הנתיב כדי לתפוס כל דבר"
+      dismissible: "לאפשר למשתמשים לסגור את המשתמשים"
+      collapsible: "לאפשר למשתמשים להרחיב ולצמצם את הכרזה"
+      full_width_banner: "הצגת הכרזה לרוחב מלוא הדפדפן"
+      primary_text_color: "צבע הטקסט העיקרי של הכרזה"
+      primary_text_color_dark: "צבע הטקסט העיקרי של הכרזה כשזוהה שהמערכת במצב כהה"
+      link_text_color: "צבע טקסט קישורים בתוך הכרזה."
