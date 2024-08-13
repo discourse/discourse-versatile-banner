@@ -21,23 +21,23 @@ de:
       display_on_desktop: "Zeige das Banner auf Desktop-Computern"
       display_on_homepage: "Zeige das Banner auf der Startseite"
       url_must_contain: "Gib Pfade ein, die das Banner anzeigen sollen. Füge <code>*</code> am Ende des Pfads als Platzhalter hinzu"
-      dismissible: "Erlaube den Benutzern das Banner zu schließen"
-      collapsible: "Erlaube den Benutzern das Banner auf- und zuzuklappen"
+      dismissible: "Erlaube den Benutzern, das Banner zu schließen"
+      collapsible: "Erlaube den Benutzern, das Banner auf- und zuzuklappen"
       default_collapsed_state: "Standardmäßiger zugeklappter Zustand, wenn die Klappfunktion aktiviert ist"
-      cookie_lifespan: 'Die Lebensdauer des Cookies, mit dem gespeichert wird, ob das Banner geschlossen, auf- oder zugeklappt wurde. Wenn du "none" einstellst, werden KEINE Cookies für diese Komponente verwendet und alle zuvor erstellten Cookies für das Banner werden gelöscht, wenn ein Nutzer das nächste Mal eine Seite vollständig lädt. Die Werte sind als ganze Einheiten angegeben, d. h. die Einstellung "year" entspricht einem Jahr, "week" einer Woche, usw.'
-      cookie_name: "Wenn wichtige Änderungen am Banner vorgenommen werden, musst du den Cookie-Namen ändern, damit alle deine Nutzer/innen die Änderungen sehen können."
+      cookie_lifespan: 'Die Lebensdauer des Cookies, mit dem gespeichert wird, ob das Banner geschlossen, auf- oder zugeklappt wurde. Wenn du „none“ einstellst, werden KEINE Cookies für diese Komponente verwendet und alle zuvor erstellten Cookies für das Banner werden gelöscht, wenn ein Benutzer das nächste Mal die Seite vollständig lädt. Die Werte sind als ganze Einheiten angegeben, d. h. die Einstellung „year“ entspricht einem Jahr, „week“ einer Woche usw.'
+      cookie_name: "Wenn wichtige Änderungen am Banner vorgenommen werden, musst du den Cookie-Namen ändern, damit alle deine Benutzer die Änderungen sehen können."
       full_width_banner: "Das Banner in voller Browserbreite anzeigen"
       swap_default_positioning: "Wenn eine andere bannerbezogene Komponente aktiv ist, kannst du hiermit ihre Position mit der des Versatile Banner tauschen"
       plugin_outlet: "below-site-header platziert es über der Seitenleiste, above-main-container platziert es über dem Inhalt seitlich der Seitenleiste"
-      banner_background_image: 'Die Quell-URL für dein Hintergrundbild. Tipp: Du kannst ein Bild in dein Hauptthema hochladen und die URL davon verwenden, aber achte darauf, dass du nicht den "Uploads"-Abschnitt dieser Komponente verwendest. Alle Uploads, die zu dieser Komponente hinzugefügt wurden, werden bei jeder Aktualisierung gelöscht.'
+      banner_background_image: 'Die Quell-URL für dein Hintergrundbild. Tipp: Du kannst ein Bild in dein Haupttheme hochladen und die URL davon verwenden, aber achte darauf, dass du nicht den „Uploads“-Abschnitt dieser Komponente verwendest. Alle Uploads, die zu dieser Komponente hinzugefügt wurden, werden bei jeder Aktualisierung gelöscht.'
       banner_background_image_dark: "Die Quell-URL für dein Hintergrundbild, wenn der dunkle Modus des Systems erkannt wird."
       background_color: "Wird anstelle eines Hintergrundbildes verwendet"
       background_color_dark: "Wird anstelle eines Hintergrundbilds verwendet, wenn der dunkle Modus des Systems erkannt wird."
       primary_text_color: "Die Haupttextfarbe des Banners"
-      primary_text_color_dark: "Die Haupttextfarbe des Banners, wenn der Dunkelmodus des Systems erkannt wird"
-      secondary_text_color: "Die Farbe des Symbols und der Textüberschriften sowie die Hintergrundfarbe der Schaltfläche."
-      secondary_text_color_dark: "Die Farbe des Symbols und der Textüberschriften sowie die Hintergrundfarbe der Schaltfläche, wenn der Dunkelmodus des Systems erkannt wird."
+      primary_text_color_dark: "Die Haupttextfarbe des Banners, wenn der dunkle Modus des Systems erkannt wird"
+      secondary_text_color: "Die Textfarbe des Symbols und der Textüberschriften sowie die Hintergrundfarbe der Schaltfläche."
+      secondary_text_color_dark: "Die Textfarbe des Symbols und der Textüberschriften sowie die Hintergrundfarbe der Schaltfläche, wenn der dunkle Modus des Systems erkannt wird."
       link_text_color: "Die Textfarbe von Links innerhalb des Banners."
-      link_text_color_dark: "Die Textfarbe von Links innerhalb des Banners, wenn der Dunkelmodus des Systems erkannt wird. <br><br><br><h2>Anpassung des Bannerinhalts</h2> Passe den Inhalt des Banners mit HTML an. Wenn du deinen benutzerdefinierten Inhalt mit CSS gestalten musst, erstelle eine separate Theme-Komponente. Lass das Feld leer, um eine Spalte wegzulassen. Es ist zwar eine vierte Spalte vorgesehen, aber das würde wahrscheinlich zu viel Inhalt für den verfügbaren Platz bedeuten. Vergewissere dich, dass du mit deiner Konfiguration bei verschiedenen Browserbreiten zufrieden bist."
-      fourth_column_content: '<br><br><h2>Spaltengrößen</h2>Verwende eine Prozentangabe, um Spalten breiter oder schmaler zu machen. Bei der Einstellung "auto" füllt die Spalte den verfügbaren Platz gleichmäßig mit anderen "auto"-Spalten aus.'
-      fourth_column_size: '<br><br><h2>Spaltensymbole</h2>Verwende ein font awesome Symbol oder einen Link zu einem Bild für das Symbol oben in den Spalten. <a href="https://fontawesome.com/v5/search?o=r&m=free" target="_blank">Klicke hier</a>, um die Liste der verfügbaren Icons zu sehen.'
+      link_text_color_dark: "Die Textfarbe von Links innerhalb des Banners, wenn der dunkle Modus des Systems erkannt wird. <br><br><br><h2>Anpassung des Bannerinhalts</h2> Passe den Inhalt des Banners mit HTML an. Wenn du deinen benutzerdefinierten Inhalt mit CSS gestalten musst, erstelle eine separate Theme-Komponente. Lass das Feld leer, um eine Spalte wegzulassen. Es ist zwar eine vierte Spalte vorgesehen, aber das würde wahrscheinlich zu viel Inhalt für den verfügbaren Platz bedeuten. Vergewissere dich, dass du mit deiner Konfiguration bei verschiedenen Browserbreiten zufrieden bist."
+      fourth_column_content: '<br><br><h2>Spaltengrößen</h2>Verwende eine Prozentangabe, um Spalten breiter oder schmaler zu machen. Bei der Einstellung „auto“ füllt die Spalte den verfügbaren Platz gleichmäßig mit anderen „auto“-Spalten aus.'
+      fourth_column_size: '<br><br><h2>Spaltensymbole</h2>Verwende font awesome oder einen Link zu einem Bild für das Symbol oben in den Spalten. <a href="https://fontawesome.com/v5/search?o=r&m=free" target="_blank">Klicke hier</a>, um die Liste der verfügbaren Icons zu sehen.'

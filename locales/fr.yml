@@ -4,4 +4,40 @@
 # To work with us on translations, join this project:
 # https://translate.discourse.org/
 
+---
 fr:
+  close:
+    title: Fermer la bannière
+    label: Fermer
+  toggle:
+    title: Développer/réduire la bannière
+    collapse_label: Réduire
+    expand_label: Développer
+  theme_metadata:
+    settings:
+      show_for_members: "Afficher la bannière pour les utilisateurs connectés au forum"
+      show_for_anon: "Afficher la bannière pour les utilisateurs anonymes"
+      display_on_mobile: "Afficher la bannière sur les appareils mobiles"
+      display_on_desktop: "Afficher la bannière sur les ordinateurs de bureau"
+      display_on_homepage: "Afficher la bannière sur la page d'accueil"
+      url_must_contain: "Saisissez les chemins qui doivent afficher la bannière. Ajoutez <code>*</code> à la fin du chemin en tant que caractère générique"
+      dismissible: "Autoriser la fermeture de la bannière par les utilisateurs"
+      collapsible: "Autoriser les utilisateurs à agrandir et à réduire la bannière"
+      default_collapsed_state: "État réduit par défaut lorsque le paramètre rétractable est activé"
+      cookie_lifespan: 'Durée de vie du cookie utilisé pour mémoriser si la bannière a été fermée, étendue ou réduite. S''il est réglé sur « aucun », AUCUN cookie ne sera utilisé avec ce composant et tous les cookies créés précédemment en lien avec la bannière seront supprimés la prochaine fois qu''un utilisateur chargera une page complète. Les valeurs sont mesurées comme une seule unité, donc le réglage « année » sera un an, « semaine » sera une semaine, etc.'
+      cookie_name: "Lorsque des modifications importantes sont apportées à la bannière, vous devez modifier le nom du cookie pour vous assurer que tous vos utilisateurs voient les modifications."
+      full_width_banner: "Afficher la bannière sur toute la largeur du navigateur"
+      swap_default_positioning: "Si un autre composant lié à la bannière est actif, utilisez-le pour échanger sa position avec la bannière polyvalente"
+      plugin_outlet: "below-site-header le place au-dessus de la barre latérale, above-main-container le place au-dessus du contenu sur le côté de la barre latérale"
+      banner_background_image: 'L''URL source de votre image d''arrière-plan. Conseil : vous pouvez téléverser une image sur votre thème principal et utiliser l''URL correspondante, mais assurez-vous de ne pas utiliser la section « Téléversements » de ce composant. Tous les téléversements ajoutés à ce composant seront supprimés chaque fois qu''il sera mis à jour.'
+      banner_background_image_dark: "URL source de votre image d'arrière-plan lorsque le mode sombre du système est détecté."
+      background_color: "Utilisé à la place d'une image d'arrière-plan"
+      background_color_dark: "Utilisé à la place d'une image d'arrière-plan lorsque le mode sombre du système est détecté."
+      primary_text_color: "La couleur principale du texte de la bannière"
+      primary_text_color_dark: "La couleur principale du texte de la bannière lorsque le mode sombre du système est détecté"
+      secondary_text_color: "La couleur du texte de l'icône et des en-têtes de texte, ainsi que la couleur d'arrière-plan du bouton."
+      secondary_text_color_dark: "La couleur du texte de l'icône et des en-têtes de texte, ainsi que la couleur d'arrière-plan du bouton lorsque le mode sombre du système est détecté."
+      link_text_color: "La couleur du texte des liens dans la bannière."
+      link_text_color_dark: "Couleur du texte des liens dans la bannière lorsque le mode sombre du système est détecté. <br><br><br><h2>Personnalisation du contenu de la bannière</h2> Personnalisez le contenu de la bannière avec du code HTML. Si vous avez besoin de styliser votre contenu personnalisé avec du CSS, créez un composant de thème distinct. Laissez le contenu vide pour exclure une colonne. Bien qu'une quatrième colonne soit fournie, elle produira probablement trop de contenu par rapport à l'espace disponible. Assurez-vous d'être satisfait(e) de votre configuration sur les différentes largeurs de navigateur."
+      fourth_column_content: '<br><br><h2>Tailles des colonnes</h2>Utilisez un pourcentage pour élargir ou affiner les colonnes. Lorsqu''elle est réglée sur « auto », la colonne remplira l''espace disponible de la même manière que les autres colonnes « automatiques ».'
+      fourth_column_size: '<br><br><h2>Icônes de colonnes</h2>Utilisez Font Awesome ou un lien vers une image pour l''icône en haut des colonnes. <a href="https://fontawesome.com/v5/search?o=r&m=free" target="_blank">Cliquez ici</a> pour afficher la liste des icônes disponibles.'
