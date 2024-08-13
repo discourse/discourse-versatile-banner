@@ -4,4 +4,40 @@
 # To work with us on translations, join this project:
 # https://translate.discourse.org/
 
+---
 it:
+  close:
+    title: Chiudi il banner
+    label: Chiudi
+  toggle:
+    title: Espandi/Comprimi il banner
+    collapse_label: Comprimi
+    expand_label: Espandi
+  theme_metadata:
+    settings:
+      show_for_members: "Visualizza il banner per gli utenti che hanno effettuato l'accesso al forum"
+      show_for_anon: "Visualizza il banner per gli utenti anonimi"
+      display_on_mobile: "Visualizza il banner sui dispositivi mobili"
+      display_on_desktop: "Visualizza il banner sui computer desktop"
+      display_on_homepage: "Visualizza il banner nella home page"
+      url_must_contain: "Inserisci i percorsi che devono visualizzare il banner. Aggiungi <code>*</code> alla fine del percorso come carattere jolly"
+      dismissible: "Consenti la chiusura del banner da parte degli utenti"
+      collapsible: "Consenti agli utenti di espandere e comprimere il banner"
+      default_collapsed_state: "Stato compresso predefinito quando l'impostazione comprimibile è abilitata"
+      cookie_lifespan: 'La durata del cookie utilizzato per ricordare se il banner è stato chiuso, espanso o compresso. Se impostato su "none", NESSUN cookie verrà utilizzato con questo componente e tutti i cookie creati in precedenza relativi al banner verranno eliminati la prossima volta che un utente esegue un caricamento completo della pagina. I valori vengono misurati come una singola unità, quindi l''impostazione "year" sarà un anno, "week" sarà una settimana, ecc.'
+      cookie_name: "Quando vengono apportate modifiche importanti al banner, è necessario modificare il nome del cookie per garantire che tutti gli utenti vedano le modifiche."
+      full_width_banner: "Mostra il banner su tutta larghezza del browser"
+      swap_default_positioning: "Se è attivo un altro componente correlato al banner, utilizzalo per scambiare la sua posizione con il Banner versatile"
+      plugin_outlet: "below-site-header lo posiziona sopra la barra laterale, above-main-container lo posiziona sopra il contenuto a lato della barra laterale"
+      banner_background_image: 'L''URL sorgente per la tua immagine di sfondo. Suggerimento: puoi caricare un''immagine sul tuo tema principale e usare l''URL da quella, ma assicurati di non usare la sezione "Carica" di questo componente. Tutti i caricamenti aggiunti a questo componente saranno eliminati ogni volta che verrà aggiornato.'
+      banner_background_image_dark: "URL di origine per l'immagine di sfondo quando viene rilevata la modalità scura del sistema."
+      background_color: "Utilizzato al posto di un'immagine di sfondo"
+      background_color_dark: "Utilizzato al posto di un'immagine di sfondo quando viene rilevata la modalità scura del sistema."
+      primary_text_color: "Il colore del testo principale del banner"
+      primary_text_color_dark: "Il colore del testo principale del banner quando viene rilevata la modalità scura del sistema"
+      secondary_text_color: "Il colore del testo dell'icona e delle intestazioni del testo, nonché il colore di sfondo del pulsante."
+      secondary_text_color_dark: "Colore del testo dell'icona e delle intestazioni del testo, nonché colore di sfondo del pulsante quando viene rilevata la modalità scura del sistema."
+      link_text_color: "Colore del testo dei link all'interno del banner."
+      link_text_color_dark: "Colore del testo dei link all'interno del banner quando viene rilevata la modalità scura del sistema. <br><br><br><h2>Personalizzazione del contenuto del banner</h2> Personalizza il contenuto del banner con HTML. Se hai bisogno di formattare il tuo contenuto personalizzato con CSS, crea un componente tema separato. Lascia il contenuto vuoto per escludere una colonna. Sebbene sia fornita una quarta colonna, probabilmente risulterà in un contenuto eccessivo per lo spazio disponibile. Assicurati che la tua configurazione appaia gradevole su diverse larghezze del browser."
+      fourth_column_content: '<br><br><h2>Dimensioni delle colonne</h2>Usa una percentuale per rendere le colonne più larghe o più strette. Quando è impostato su "auto", la colonna riempirà lo spazio disponibile in modo uniforme con altre colonne "auto".'
+      fourth_column_size: '<br><br><h2>Icone delle colonne</h2>Usa Font Awesome o un link a un''immagine per l''icona in cima alle colonne. <a href="https://fontawesome.com/v5/search?o=r&m=free" target="_blank">Fai clic qui</a> per visualizzare l''elenco delle icone disponibili.'

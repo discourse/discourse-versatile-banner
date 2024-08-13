@@ -4,4 +4,40 @@
 # To work with us on translations, join this project:
 # https://translate.discourse.org/
 
+---
 es:
+  close:
+    title: Cerrar el banner
+    label: Cerrar
+  toggle:
+    title: Expandir/contraer el banner
+    collapse_label: Contraer
+    expand_label: Expandir
+  theme_metadata:
+    settings:
+      show_for_members: "Mostrar el banner para los usuarios que han iniciado sesión en el foro"
+      show_for_anon: "Mostrar el banner para usuarios anónimos"
+      display_on_mobile: "Mostrar el banner en dispositivos móviles"
+      display_on_desktop: "Mostrar el banner en ordenadores de escritorio"
+      display_on_homepage: "Mostrar el banner en la página de inicio"
+      url_must_contain: "Introduce las rutas que deben mostrar el banner. Añade <code>*</code> al final de la ruta como comodín"
+      dismissible: "Permitir que los usuarios cierren el banner"
+      collapsible: "Permitir que los usuarios expandan y contraigan el banner"
+      default_collapsed_state: "Estado contraído por defecto cuando está activado el ajuste contraíble"
+      cookie_lifespan: 'La duración de la cookie utilizada para recordar si el banner se ha cerrado, expandido o contraído. Si se establece en «ninguna», NO se utilizarán cookies con este componente, y cualquier cookie creada previamente relacionada con el banner se eliminará la próxima vez que un usuario realice una carga completa de la página. Los valores se miden como una sola unidad, por lo que establecer «año» será un año, «semana» será una semana, etc.'
+      cookie_name: "Cuando se realicen cambios importantes en el banner, debes cambiar el nombre de la cookie para asegurarte de que todos tus usuarios ven los cambios."
+      full_width_banner: "Mostrar el banner a todo el ancho del navegador"
+      swap_default_positioning: "Si hay otro componente relacionado con el banner activo, utilízalo para intercambiar su posición con el Banner Versátil"
+      plugin_outlet: "below-site-header lo coloca encima de la barra lateral, above-main-container lo coloca encima del contenido al lado de la barra lateral"
+      banner_background_image: 'La URL de origen de tu imagen de fondo. Consejo: puedes subir una imagen a tu tema principal y utilizar la URL de la misma, pero asegúrate de no utilizar la sección «Subidas» de este componente. Cualquier subida añadida a este componente se eliminará cada vez que se actualice.'
+      banner_background_image_dark: "La URL de origen de la imagen de fondo cuando se detecta el modo oscuro del sistema."
+      background_color: "Se utiliza en lugar de una imagen de fondo"
+      background_color_dark: "Se utiliza en lugar de una imagen de fondo cuando se detecta el modo oscuro del sistema."
+      primary_text_color: "El color del texto principal del banner"
+      primary_text_color_dark: "El color del texto principal del banner cuando se detecta el modo oscuro del sistema"
+      secondary_text_color: "El color del texto del icono y de los encabezados de texto, y el color de fondo del botón."
+      secondary_text_color_dark: "El color del texto del icono y de los encabezados de texto, y el color del fondo del botón cuando se detecta el modo oscuro del sistema."
+      link_text_color: "El color del texto de los enlaces dentro del banner."
+      link_text_color_dark: "El color del texto de los enlaces dentro del banner cuando se detecta el modo oscuro del sistema. <br><br><br><h2>Personalización del contenido del banner</h2> Personaliza el contenido del banner con HTML. Si necesitas dar estilo a tu contenido personalizado con CSS, crea un componente de tema aparte. Deja el contenido en blanco para excluir una columna. Aunque se proporciona una cuarta columna, es probable que resulte demasiado contenido para el espacio disponible. Asegúrate de que estás satisfecho con tu configuración en diferentes anchos de navegador."
+      fourth_column_content: '<br><br><h2>Tamaños de columna</h2>Utiliza un porcentaje para hacer columnas más anchas o estrechas. Cuando se establece en «auto», la columna llenará el espacio disponible de forma uniforme con otras columnas «auto».'
+      fourth_column_size: '<br><br><h2>Iconos de columna</h2>Utiliza Font Awesome o un enlace a una imagen para el icono de la parte superior de las columnas. <a href="https://fontawesome.com/v5/search?o=r&m=free" target="_blank">Haz clic aquí</a> para ver la lista de iconos disponibles.'

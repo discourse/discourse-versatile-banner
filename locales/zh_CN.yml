@@ -4,4 +4,40 @@
 # To work with us on translations, join this project:
 # https://translate.discourse.org/
 
+---
 zh_CN:
+  close:
+    title: 关闭横幅
+    label: 关闭
+  toggle:
+    title: 展开/收起横幅
+    collapse_label: 收起
+    expand_label: 展开
+  theme_metadata:
+    settings:
+      show_for_members: "向登录论坛的用户显示横幅"
+      show_for_anon: "向匿名用户显示横幅"
+      display_on_mobile: "在移动设备上显示横幅"
+      display_on_desktop: "在台式计算机上显示横幅"
+      display_on_homepage: "在首页上显示横幅"
+      url_must_contain: "输入应显示横幅的路径。将 <code>*</code> 作为通配符添加到路径末尾"
+      dismissible: "允许用户关闭横幅"
+      collapsible: "允许用户展开和收起横幅"
+      default_collapsed_state: "启用可收起设置时的默认收起状态"
+      cookie_lifespan: '用于记住横幅是否已关闭、展开或收起的 Cookie 的寿命。如果设置为“none”，则此组件将会不使用任何 Cookie，并且在用户下次执行完整页面加载时，将删除与横幅相关的任何先前创建的 Cookie。这些值以单个单位计量，因此设置“year”即为一年，“week”即为一周，以此类推。'
+      cookie_name: "对横幅进行重要更改时，您必须更改 Cookie 名称以确保所有用户都能看到更改。"
+      full_width_banner: "以浏览器全宽显示横幅"
+      swap_default_positioning: "如果有另一个与横幅相关的组件处于有效状态，则使用此组件与多功能横幅交换其位置"
+      plugin_outlet: "below-site-header 将其置于边栏上方，above-main-container 将其置于边栏侧面的内容上方"
+      banner_background_image: '背景图片的源 URL。提示：您可以将图片上传到主主题并使用其中的 URL，但请确保不要使用此组件的“上传”部分。当此组件更新时，添加到此组件的任何上传都将被删除。'
+      banner_background_image_dark: "检测到系统深色模式时背景图片的源 URL。"
+      background_color: "用于替代背景图片"
+      background_color_dark: "检测到系统深色模式时用于替代背景图片。"
+      primary_text_color: "横幅的主文本颜色"
+      primary_text_color_dark: "检测到系统深色模式时横幅的主文本颜色"
+      secondary_text_color: "图标和文本标题的文本颜色以及按钮背景颜色。"
+      secondary_text_color_dark: "检测到系统深色模式时图标和文本标题的文本颜色以及按钮背景颜色。"
+      link_text_color: "横幅内链接的文本颜色。"
+      link_text_color_dark: "检测到系统深色模式时横幅内链接的文本颜色。<br><br><br><h2>横幅内容自定义</h2> 使用 HTML 自定义横幅的内容。如果您需要使用 CSS 设置自定义内容的样式，请创建一个单独的主题组件。将内容留空以排除列。虽然提供了第四列，但它可能会导致内容过多，进而造成可用空间不足。确保您对不同浏览器宽度的配置感到满意。"
+      fourth_column_content: '<br><br><h2>列大小</h2>使用百分比来增大或减小列的宽度。设置为“auto”时，该列将与其他“auto”列均匀地填充可用空间。'
+      fourth_column_size: '<br><br><h2>列图标</h2>为列顶部的图标使用 Font Awesome 或图片链接。<a href="https://fontawesome.com/v5/search?o=r&m=free" target="_blank">点击此处</a>查看可用图标列表。'

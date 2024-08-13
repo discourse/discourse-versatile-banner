@@ -4,4 +4,19 @@
 # To work with us on translations, join this project:
 # https://translate.discourse.org/
 
+---
 ja:
+  close:
+    title: バナーを閉じる
+    label: 閉じる
+  toggle:
+    title: バナーの展開/折りたたみ
+    collapse_label: 折りたたむ
+    expand_label: 展開
+  theme_metadata:
+    settings:
+      show_for_members: "フォーラムにログインしているユーザーにバナーを表示する"
+      show_for_anon: "匿名ユーザーにバナーを表示する"
+      display_on_mobile: "モバイルデバイスにバナーを表示する"
+      display_on_desktop: "デスクトップコンピューターにバナーを表示する"
+      display_on_homepage: "ホームページにバナーを表示する"
