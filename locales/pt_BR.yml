@@ -4,4 +4,40 @@
 # To work with us on translations, join this project:
 # https://translate.discourse.org/
 
+---
 pt_BR:
+  close:
+    title: Fechar o banner
+    label: Fechar
+  toggle:
+    title: Expandir/recolher o banner
+    collapse_label: Recolher
+    expand_label: Expandir
+  theme_metadata:
+    settings:
+      show_for_members: "Exibir o banner para usuários(as) conectados ao fórum"
+      show_for_anon: "Exibir o banner para usuários(as) anônimos(as)"
+      display_on_mobile: "Exibir o banner em dispositivos móveis"
+      display_on_desktop: "Exibir o banner em computadores desktop"
+      display_on_homepage: "Exibir o banner na página inicial"
+      url_must_contain: "Insira o caminho para exibir o banner. Adicione <code>*</code> ao fim do caminho para servir de coringa"
+      dismissible: "Permitir que o banner seja fechado por usuários(as)"
+      collapsible: "Permitir que o banner seja expandido e recolhido pelos(as) usuários(as)"
+      default_collapsed_state: "Estado recolhido padrão quando a configuração de recolhimento estiver ativada"
+      cookie_lifespan: 'Tempo de vida do cookie usado para lembrar se o banner foi fechado, expandido ou recolhido. Se estiver definido como "none", NENHUM cookie será usado com este componente, e os cookies relacionados a este banner que foram criados anteriormente serão excluídos na próxima vez que o(a) usuário(a) carregar uma página completa. Os valores são medidos como uma unidade única, por isso a configuração "year" (ano) será um ano, "week" (semana) será uma semana etc.'
+      cookie_name: "Quando alterações importantes forem realizadas neste banner, mude o nome do cookie para garantir que serão visíveis a todos(as) os(as) usuários(as)."
+      full_width_banner: "Exibir o banner na altura máxima do navegador"
+      swap_default_positioning: "Se houver outro componente relacionado ao banner ativo, use esta opção para trocá-lo de posição com o banner versátil"
+      plugin_outlet: "A opção \"below-site-header\" posiciona acima da barra lateral, e \"above-main-container\" acima do conteúdo ao lado da barra lateral"
+      banner_background_image: 'A URL de origem da sua imagem de fundo. Dica: você pode carregar uma imagem para o tema principal e usar a respectiva URL. Mas não use a seção "Envios" deste componente. Os envios adicionados a ele serão excluídos no momento da atualização.'
+      banner_background_image_dark: "A URL de origem da sua imagem de fundo quando o Modo Escuro do sistema for detectado."
+      background_color: "Use em vez da imagem de fundo"
+      background_color_dark: "Use em vez da imagem de fundo quando o Modo Escuro do sistema for detectado."
+      primary_text_color: "A cor do texto principal do banner"
+      primary_text_color_dark: "A cor do texto principal do banner quando o Modo Escuro do sistema for detectado"
+      secondary_text_color: "A cor do texto do ícone e cabeçalhos do texto e a cor de fundo do botão"
+      secondary_text_color_dark: "A cor do texto do ícone e cabeçalhos do texto e a cor de fundo do botão quando o Modo Escuro do sistema for detectado."
+      link_text_color: "A cor do texto dos links que estão no banner."
+      link_text_color_dark: "A cor do texto dos links que estão no banner quando o Modo Escuro do sistema for detectado. <br><br><br><h2>Personalização do conteúdo do banner</h2> Personalize o conteúdo do banner com HTML. Se precisar definir o estilo do seu conteúdo personalizado com CSS, crie um componente do tema separado. Deixe o conteúdo em branco para excluir uma coluna. Embora seja fornecida uma quarta coluna, provavelmente haverá excesso de conteúdo para o espaço disponível. Você precisa estar satisfeito(a) com a configuração para alturas em browser diferentes."
+      fourth_column_content: '<br><br><h2>Tamanhos de coluna</h2>Use uma porcentagem para tornar as colunas mais largas ou estreitas. Ao definir como "auto" (automático), todos os espaços da coluna serão preenchidos igualmente com outras colunas "auto".'
+      fourth_column_size: '<br><br><h2>Ícones da coluna</h2>Use o Font Awesome ou o link de uma imagem no topo das colunas. <a href="https://fontawesome.com/v5/search?o=r&m=free" target="_blank">Clique aqui</a> para visualizar a lista de ícones disponíveis.'
