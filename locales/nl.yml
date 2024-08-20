@@ -4,4 +4,40 @@
 # To work with us on translations, join this project:
 # https://translate.discourse.org/
 
+---
 nl:
+  close:
+    title: Sluit de banner
+    label: Sluiten
+  toggle:
+    title: Vouw de banner uit/samen
+    collapse_label: Samenvouwen
+    expand_label: Uitvouwen
+  theme_metadata:
+    settings:
+      show_for_members: "Banner weergeven voor gebruikers aangemeld op het forum"
+      show_for_anon: "Banner weergeven voor anonieme gebruikers"
+      display_on_mobile: "Banner weergeven op mobiele apparaten"
+      display_on_desktop: "Banner weergeven op desktopcomputers"
+      display_on_homepage: "Banner weergeven op startpagina"
+      url_must_contain: "Voer paden in die de banner moeten weergeven. Voeg <code>*</code> toe aan het einde van een pad als jokerteken"
+      dismissible: "Toestaan dat gebruikers de banner sluiten"
+      collapsible: "Toestaan dat gebruikers de banner uitvouwen en samenvouwen"
+      default_collapsed_state: "Standaard samengevouwen status als de instelling samenvouwbaar is ingeschakeld"
+      cookie_lifespan: 'De levensduur van de cookie die wordt gebruikt om te onthouden of de banner is gesloten, uitgevouwen of samengevouwen. Als dit is ingesteld op "none" (geen), worden er GEEN cookies gebruikt voor deze component en worden alle eerder ingestelde cookies met betrekking tot de banner verwijderd de volgende keer dat een gebruiker een volledige pagina laadt. De waarden worden gemeten als één eenheid, dus de instelling "year" is één jaar, "week" is één week, etc.'
+      cookie_name: "Als er belangrijke wijzigingen worden aangebracht in de banner, moet je de cookienaam wijzigen om ervoor te zorgen dat al je gebruikers de wijzigingen zien."
+      full_width_banner: "Banner weergeven op volledige browserbreedte"
+      swap_default_positioning: "Als er een andere bannergerelateerd component actief is, kun je dit gebruiken om de positie ervan te verwisselen met de Versatile Banner"
+      plugin_outlet: "below-site-header plaatst de baner boven de zijbalk, above-main-container plaatst hem boven de inhoud opzij van de zijbalk"
+      banner_background_image: 'De bron-URL voor je achtergrondafbeelding. Tip: je kunt een afbeelding uploaden naar je hoofdthema en de URL daarvan gebruiken, maar zorg dat je de sectie "Uploads" van deze component niet gebruikt. Alle uploads die aan deze component worden toegevoegd, worden verwijderd wanneer deze wordt bijgewerkt.'
+      banner_background_image_dark: "De bron-URL voor je achtergrondafbeelding wanneer de donkere systeemmodus wordt gedetecteerd."
+      background_color: "Wordt gebruikt in plaats van een achtergrondafbeelding"
+      background_color_dark: "Wordt gebruikt in plaats van een achtergrondafbeelding wanneer de donkere systeemmodus wordt gedetecteerd."
+      primary_text_color: "De hoofdtekstkleur van de banner"
+      primary_text_color_dark: "De hoofdtekstkleur van de banner wanneer de donkere systeemmodus wordt gedetecteerd"
+      secondary_text_color: "De tekstkleur van het pictogram en de tekstkoppen en de achtergrondkleur van de knop."
+      secondary_text_color_dark: "De tekstkleur van het pictogram en de tekstkoppen en de achtergrondkleur van de knop wanneer de donkere systeemmodus wordt gedetecteerd."
+      link_text_color: "De tekstkleur van links in de banner."
+      link_text_color_dark: "De tekstkleur van links in de banner wanneer de donkere systeemmodus wordt gedetecteerd. <br><br><br><h2>Aanpassing van bannerinhoud</h2> Pas de inhoud van de banner aan met HTML. Als je je aangepaste inhoud wilt opmaken met CSS, maak dan een afzonderlijke themacomponent. Laat de inhoud leeg om een kolom uit te sluiten. Hoewel er een vierde kolom is, zal dit waarschijnlijk resulteren in te veel inhoud voor de beschikbare ruimte. Controleer of je configuratie goed is in verschillende browserbreedtes."
+      fourth_column_content: '<br><br><h2>Kolomgroottes</h2>Gebruik een percentage om kolommen breder of smaller te maken. Als dit is ingesteld op "auto", vult de kolom de beschikbare ruimte gelijkmatig ten opzichte van andere "auto"-kolommen.'
+      fourth_column_size: '<br><br><h2>Kolompictogrammen</h2>Gebruik Font Awesome of een link naar een afbeelding voor het pictogram bovenaan de kolommen. <a href="https://fontawesome.com/v5/search?o=r&m=free" target="_blank">Klik hier</a> voor de lijst van beschikbare pictogrammen.'

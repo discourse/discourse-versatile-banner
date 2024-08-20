@@ -4,4 +4,40 @@
 # To work with us on translations, join this project:
 # https://translate.discourse.org/
 
+---
 tr_TR:
+  close:
+    title: Banner'ı kapat
+    label: Kapat
+  toggle:
+    title: Banner'ı genişlet/daralt
+    collapse_label: Daralt
+    expand_label: Genişlet
+  theme_metadata:
+    settings:
+      show_for_members: "Foruma giriş yapmış kullanıcılar için banner'ı göster"
+      show_for_anon: "Anonim kullanıcılar için banner'ı göster"
+      display_on_mobile: "Banner'ı mobil cihazlarda göster"
+      display_on_desktop: "Banner'ı masaüstü bilgisayarlarda göster"
+      display_on_homepage: "Banner'ı ana sayfada göster"
+      url_must_contain: "Banner'ı göstermesi gereken yolları girin. Joker karakter olarak yolun sonuna <code>*</code> ekleyin"
+      dismissible: "Banner'ın kullanıcılar tarafından kapatılmasına izin ver"
+      collapsible: "Banner'ın kullanıcılar tarafından genişletilmesine ve daraltılmasına izin ver"
+      default_collapsed_state: "Daraltılabilir ayar etkinleştirildiğinde varsayılan daraltılmış durum"
+      cookie_lifespan: 'Banner''ın kapatılıp kapatılmadığını, genişletilip genişletilmediğini veya daraltılıp daraltılmadığını hatırlamak için kullanılan çerezin ömrü. "Hiçbiri" olarak ayarlanırsa bu bileşenle HİÇBİR çerez kullanılmaz ve banner ile ilgili daha önce oluşturulmuş tüm çerezler bir kullanıcı bir sonraki tam sayfa yüklemesini gerçekleştirdiğinde silinir. Değerler tek bir birim olarak ölçülür, bu nedenle "yıl" bir yıl, "hafta" bir hafta vb. olarak ayarlanır.'
+      cookie_name: "Banner'da önemli değişiklikler yapıldığında, tüm kullanıcılarınızın değişiklikleri görebilmesini sağlamak için çerez adını değiştirmeniz gerekir."
+      full_width_banner: "Banner'ı tam tarayıcı genişliğinde göster"
+      swap_default_positioning: "Başka bir banner ile ilgili bileşen etkinse bunu Çok Yönlü Banner ile konumunu değiştirmek için kullanın"
+      plugin_outlet: "below-site-header bunu kenar çubuğunun üstüne koyar, above-main-container bunu kenar çubuğunun yanındaki içeriğin üstüne koyar"
+      banner_background_image: 'Arka plan resminizin kaynak URL''si. İpucu: Ana temanıza bir resim yükleyebilir ve bunun URL''sini kullanabilirsiniz, ancak bu bileşenin “Yüklemeler” bölümünü kullanmadığınızdan emin olun. Bu bileşene eklenen tüm yüklemeler, güncellendiğinde silinir.'
+      banner_background_image_dark: "Sistem karanlık modu algılandığında arka plan resminizin kaynak URL'si."
+      background_color: "Arka plan resmi yerine kullanılır"
+      background_color_dark: "Sistem karanlık modu algılandığında arka plan resmi yerine kullanılır."
+      primary_text_color: "Banner'ın ana metin rengi"
+      primary_text_color_dark: "Sistem karanlık modu algılandığında banner'ın ana metin rengi"
+      secondary_text_color: "Simge ve metin başlıklarının metin rengi ve düğme arka plan rengi."
+      secondary_text_color_dark: "Sistem karanlık modu algılandığında simge ve metin başlıklarının metin rengi ve düğme arka plan rengi."
+      link_text_color: "Banner içindeki bağlantıların metin rengi."
+      link_text_color_dark: "Sistem karanlık modu algılandığında banner içindeki bağlantıların metin rengi. <br><br><br><h2>Banner İçeriği Özelleştirme</h2> Banner içeriğini HTML ile özelleştirin. Özel içeriğinizi CSS ile biçimlendirmeniz gerekiyorsa ayrı bir tema bileşeni oluşturun. Bir sütunu hariç tutmak için içeriği boş bırakın. Dördüncü bir sütun sağlansa da muhtemelen kullanılabilir alan için çok fazla içerikle sonuçlanır. Farklı tarayıcı genişliklerinde yapılandırmanızdan memnun olduğunuzdan emin olun."
+      fourth_column_content: '<br><br><h2>Sütun Boyutları</h2>Sütunları daha geniş veya dar yapmak için bir yüzde kullanın. "Otomatik" olarak ayarlandığında, sütun kullanılabilir alanı diğer "otomatik" sütunlarla eşit şekilde doldurulur.'
+      fourth_column_size: '<br><br><h2>Sütun Simgeleri</h2>Sütunların en üstündeki simge için font awesome''ı veya bir görüntüye bağlantıyı kullanın. Kullanılabilir simgelerin listesini görüntülemek için <a href="https://fontawesome.com/v5/search?o=r&m=free" target="_blank">buraya tıklayın</a>.'
