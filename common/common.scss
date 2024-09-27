@@ -48,7 +48,6 @@
   width: $large-width;
   max-width: calc(100% - 16px);
   margin: 0 auto;
-  margin-top: 20px;
   color: var(--banner-primary-text);
   position: relative;
   background-image: var(--banner-bg-img);
@@ -56,6 +55,10 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-color: var(--banner-bg-color);
+
+  .container:last-child {
+    margin-top: 20px;
+  }
 
   .button-container {
     margin-right: 5px;
