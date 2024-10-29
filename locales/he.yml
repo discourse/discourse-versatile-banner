@@ -31,3 +31,4 @@ he:
       secondary_text_color: "צבע טקסט הסמל וכותרות הטקסט וצבע רקע הכפתור."
       secondary_text_color_dark: "צבע טקסט הסמל וכותרות הטקסט וצבע רקע הכפתור כשמזוהה מצב כהה במערכת."
       link_text_color: "צבע טקסט קישורים בתוך הכרזה."
+      fourth_column_size: '<br><br><h2>סמלי עמודות</h2>אפשר להשתמש ב־font awesome או בקישור לתמונה בתור סמל ראש העמודה. <a href="https://fontawesome.com/v6/search?o=r&m=free" target="_blank">לחיצה כאן</a> תציג את רשימת הסמלים הזמינים.'
