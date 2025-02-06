@@ -3,9 +3,9 @@ import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
 import cookie, { removeCookie } from "discourse/lib/cookie";
+import { convertIconClass } from "discourse/lib/icon-library";
 import { defaultHomepage } from "discourse/lib/utilities";
-import { convertIconClass } from "discourse-common/lib/icon-library";
-import I18n from "I18n";
+import { i18n } from "discourse-i18n";
 
 export default class VersatileBanner extends Component {
   @service router;
@@ -90,8 +90,8 @@ export default class VersatileBanner extends Component {
 
   get toggleLabel() {
     return this.bannerCollapsed
-      ? I18n.t(themePrefix("toggle.expand_label"))
-      : I18n.t(themePrefix("toggle.collapse_label"));
+      ? i18n(themePrefix("toggle.expand_label"))
+      : i18n(themePrefix("toggle.collapse_label"));
   }
 
   get toggleIcon() {
