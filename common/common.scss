@@ -3,6 +3,7 @@
     display: none !important;
   }
 }
+
 @if $display_on_mobile == "false" {
   .mobile-view .banner-box {
     display: none !important;
@@ -17,11 +18,14 @@
   .above-site-header-outlet {
     order: -4;
   }
+
   .d-header-wrap {
     order: -3;
   }
+
   .below-site-header-outlet {
     order: -1;
+
     & + .below-site-header-outlet {
       order: -2;
     }
@@ -37,6 +41,7 @@
   #main > div {
     .below-site-header-outlet {
       order: -2;
+
       & + .below-site-header-outlet {
         order: -1;
       }
@@ -77,6 +82,7 @@
       svg {
         color: #646464;
       }
+
       .d-button-label {
         font-size: 1em;
         color: #646464;
@@ -84,11 +90,12 @@
 
       &:hover {
         svg {
-          color: #222222;
+          color: #222;
         }
+
         .d-button-label {
           font-size: 1em;
-          color: #222222;
+          color: #222;
         }
       }
 
@@ -139,7 +146,7 @@
       float: left;
       position: relative;
       min-height: 1px;
-      padding: 0px 15px 30px;
+      padding: 0 15px 30px;
       text-align: center;
 
       .icon {
@@ -157,6 +164,7 @@
       .banner-list {
         display: flex;
         justify-content: center;
+
         ul {
           text-align: left;
           margin: 0;
@@ -177,11 +185,10 @@
   }
 }
 
-//-------------------------- Setting Based Rules --------------------------//
-//                      Modified using theme settings
-//-------------------------------------------------------------------------//
+// Setting Based Rules
+// Modified using theme settings
 
-////////////// Columns //////////////
+// Columns
 
 // First column
 @if $first_column_size == "auto" {
@@ -231,7 +238,7 @@
   }
 }
 
-////////////// Full Width //////////////
+// Full Width
 
 @if $full_width_banner == "true" {
   #main .banner-box {
@@ -270,6 +277,7 @@
       button {
         padding: 5px 5px;
       }
+
       .d-button-label {
         display: none;
       }
@@ -301,7 +309,6 @@
 // we can't animate with auto height, so we need a big max-height to cover variable content
 // if the content is taller than the max-height, this will need to be adjusted
 // but if it's too large, clicking collapse animation will feel laggy
-
 #banner-content_wrap {
   overflow: hidden;
   max-height: 1000px;
