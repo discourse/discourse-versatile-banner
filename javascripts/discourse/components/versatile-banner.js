@@ -11,6 +11,7 @@ export default class VersatileBanner extends Component {
   @service router;
   @service site;
   @service currentUser;
+
   @tracked bannerClosed = this.cookieClosed || false;
   @tracked
   bannerCollapsed =
