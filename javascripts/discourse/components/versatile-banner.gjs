@@ -2,10 +2,14 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
+import { and } from "truth-helpers";
+import DButton from "discourse/components/d-button";
+import htmlSafe from "discourse/helpers/html-safe";
 import cookie, { removeCookie } from "discourse/lib/cookie";
 import { convertIconClass } from "discourse/lib/icon-library";
 import { defaultHomepage } from "discourse/lib/utilities";
 import { i18n } from "discourse-i18n";
+import VersatileBannerColumn from "./versatile-banner-column";
 
 export default class VersatileBanner extends Component {
   @service router;
@@ -134,4 +138,55 @@ export default class VersatileBanner extends Component {
       path: "/",
     });
   }
+
+  <template>
+    {{#if this.shouldShow}}
+      {{#unless this.bannerClosed}}
+        <div class="banner-box">
+          <div class="container">
+            <div class="button-container">
+              {{#if settings.dismissible}}
+                <DButton
+                  @action={{this.closeBanner}}
+                  @translatedLabel={{i18n (themePrefix "close.label")}}
+                  @translatedTitle={{i18n (themePrefix "close.title")}}
+                  @icon="xmark"
+                  class="close"
+                />
+              {{/if}}
+              {{#if settings.collapsible}}
+                <DButton
+                  @action={{this.toggleBanner}}
+                  @translatedLabel={{this.toggleLabel}}
+                  @translatedTitle={{i18n (themePrefix "toggle.title")}}
+                  @icon={{this.toggleIcon}}
+                  class="toggle"
+                />
+              {{/if}}
+            </div>
+            <div class="section-header">
+              {{htmlSafe settings.main_heading_content}}
+            </div>
+            <div
+              id="banner-content_wrap"
+              class={{if
+                (and settings.collapsible this.bannerCollapsed)
+                "--banner-collapsed"
+              }}
+            >
+              <div class="row">
+                {{#each this.columnData as |data|}}
+                  <VersatileBannerColumn
+                    @columnContent={{data.content}}
+                    @icon={{data.icon}}
+                    @columnClass={{data.class}}
+                  />
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/unless}}
+    {{/if}}
+  </template>
 }
