@@ -260,7 +260,7 @@
   }
 }
 
-@media screen and (max-width: 736px) {
+@media screen and (width <= 736px) {
   // Wrap columns
   .banner-box .row {
     display: block;

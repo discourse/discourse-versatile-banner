@@ -4,7 +4,7 @@ export default function migrate(settings) {
     "second_column_icon",
     "third_column_icon",
     "fourth_column_icon",
-  ]
+  ];
 
   settingNames.forEach((settingName) => {
     const oldSetting = settings.get(settingName);
