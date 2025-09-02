@@ -8,4 +8,4 @@
 ro:
   theme_metadata:
     settings:
-      fourth_column_size: '<br><br><h2>Iconuri coloane</h2>Folosește font awesome sau o legătură către o imagine pentru pictograma din partea de sus a coloanelor. <a href="https://fontawesome.com/v6/search?o=r&m=free" target="_blank">Dă clic aici</a> pentru a vizualiza lista de iconuri disponibile.'
+      fifth_column_size: '<br><br><h2>Iconuri coloane</h2>Folosește font awesome sau o legătură către o imagine pentru pictograma din partea de sus a coloanelor. <a href="https://fontawesome.com/v6/search?o=r&m=free" target="_blank">Dă clic aici</a> pentru a vizualiza lista de iconuri disponibile.'
