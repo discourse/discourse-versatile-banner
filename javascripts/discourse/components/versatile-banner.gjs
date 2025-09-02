@@ -50,6 +50,11 @@ export default class VersatileBanner extends Component {
       class: "fourth_column",
       icon: convertIconClass(settings.fourth_column_icon),
     },
+    {
+      content: settings.fifth_column_content,
+      class: "fifth_column",
+      icon: convertIconClass(settings.fifth_column_icon),
+    },
   ];
 
   get cookieExpirationDate() {

@@ -39,5 +39,5 @@ zh_CN:
       secondary_text_color_dark: "检测到系统深色模式时图标和文本标题的文本颜色以及按钮背景颜色。"
       link_text_color: "横幅内链接的文本颜色。"
       link_text_color_dark: "检测到系统深色模式时横幅内链接的文本颜色。<br><br><br><h2>横幅内容自定义</h2> 使用 HTML 自定义横幅的内容。如果您需要使用 CSS 设置自定义内容的样式，请创建一个单独的主题组件。将内容留空以排除列。虽然提供了第四列，但它可能会导致内容过多，进而造成可用空间不足。确保您对不同浏览器宽度的配置感到满意。"
-      fourth_column_content: '<br><br><h2>列大小</h2>使用百分比来增大或减小列的宽度。设置为“auto”时，该列将与其他“auto”列均匀地填充可用空间。'
-      fourth_column_size: '<br><br><h2>列图标</h2>为列顶部的图标使用 Font Awesome 或图片链接。<a href="https://fontawesome.com/v6/search?o=r&m=free" target="_blank">点击此处</a>查看可用图标列表。'
+      fifth_column_content: '<br><br><h2>列大小</h2>使用百分比来增大或减小列的宽度。设置为“auto”时，该列将与其他“auto”列均匀地填充可用空间。'
+      fifth_column_size: '<br><br><h2>列图标</h2>为列顶部的图标使用 Font Awesome 或图片链接。<a href="https://fontawesome.com/v6/search?o=r&m=free" target="_blank">点击此处</a>查看可用图标列表。'
