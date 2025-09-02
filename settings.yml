@@ -153,6 +153,10 @@ fourth_column_content:
   type: string
   textarea: true
   default: ""
+fifth_column_content:
+  type: string
+  textarea: true
+  default: ""
 first_column_size:
   type: string
   default: "auto"
@@ -165,6 +169,9 @@ third_column_size:
 fourth_column_size:
   type: string
   default: ""
+fifth_column_size:
+  type: string
+  default: ""
 first_column_icon:
   type: string
   default: "gear"
@@ -175,5 +182,8 @@ third_column_icon:
   type: string
   default: "wrench"
 fourth_column_icon:
+  type: string
+  default: ""
+fifth_column_icon:
   type: string
   default: ""

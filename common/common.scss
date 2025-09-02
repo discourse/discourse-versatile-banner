@@ -238,6 +238,18 @@
   }
 }
 
+// Fifth column
+@if $fifth_column_size == "auto" {
+  .fifth_column {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+} @else {
+  .fifth_column {
+    width: $fifth_column_size;
+  }
+}
+
 // Full Width
 
 @if $full_width_banner == "true" {
@@ -288,7 +300,8 @@
   .first_column,
   .second_column,
   .third_column,
-  .fourth_column {
+  .fourth_column,
+  .fifth_column {
     width: 90%;
   }
 }
