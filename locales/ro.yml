@@ -8,4 +8,5 @@
 ro:
   theme_metadata:
     settings:
-      fifth_column_size: '<br><br><h2>Iconuri coloane</h2>Folosește font awesome sau o legătură către o imagine pentru pictograma din partea de sus a coloanelor. <a href="https://fontawesome.com/v6/search?o=r&m=free" target="_blank">Dă clic aici</a> pentru a vizualiza lista de iconuri disponibile.'
+      fifth_column_content: '<br><br><h2>Dimensiuni coloane</h2>Folosește un procent pentru a lărgi sau a îngusta coloanele. Când este setat la „automat”, coloana va umple uniform spațiul disponibil cu alte coloane „automate”.'
+      fifth_column_size: '<br><br><h2>Iconuri coloane</h2>Folosește font awesome sau o legătură către o imagine pentru icon din partea de sus a coloanelor. <a href="https://fontawesome.com/v6/search?o=r&m=free" target="_blank">Dă clic aici</a> pentru a vizualiza lista de iconuri disponibile.'
