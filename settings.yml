@@ -52,6 +52,9 @@ plugin_outlet:
   choices:
     - "below-site-header"
     - "above-main-container"
+    - "discovery-list-controls-above"
+    - "header-list-container-bottom"
+    - "before-topic-list"
   refresh: true
 banner_background_image:
   type: string
