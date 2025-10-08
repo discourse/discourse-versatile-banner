@@ -1,7 +1,7 @@
 import Component from "@glimmer/component";
+import { htmlSafe } from "@ember/template";
 import { or } from "truth-helpers";
 import icon from "discourse/helpers/d-icon";
-import htmlSafe from "discourse/helpers/html-safe";
 
 export default class VersatileBannerColumn extends Component {
   get isHttpLink() {
