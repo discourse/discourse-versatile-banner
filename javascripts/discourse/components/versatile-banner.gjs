@@ -2,9 +2,9 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
+import { htmlSafe } from "@ember/template";
 import { and } from "truth-helpers";
 import DButton from "discourse/components/d-button";
-import htmlSafe from "discourse/helpers/html-safe";
 import cookie, { removeCookie } from "discourse/lib/cookie";
 import { convertIconClass } from "discourse/lib/icon-library";
 import { defaultHomepage } from "discourse/lib/utilities";
@@ -13,7 +13,6 @@ import VersatileBannerColumn from "./versatile-banner-column";
 
 export default class VersatileBanner extends Component {
   @service router;
-  @service site;
   @service currentUser;
 
   @tracked bannerClosed = this.cookieClosed || false;
