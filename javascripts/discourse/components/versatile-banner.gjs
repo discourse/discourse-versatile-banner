@@ -3,11 +3,11 @@ import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
 import { htmlSafe } from "@ember/template";
-import { and } from "truth-helpers";
 import DButton from "discourse/components/d-button";
 import cookie, { removeCookie } from "discourse/lib/cookie";
 import { convertIconClass } from "discourse/lib/icon-library";
 import { defaultHomepage } from "discourse/lib/utilities";
+import { and } from "discourse/truth-helpers";
 import { i18n } from "discourse-i18n";
 import VersatileBannerColumn from "./versatile-banner-column";
 
