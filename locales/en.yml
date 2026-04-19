@@ -1,12 +1,4 @@
----
 en:
-  close:
-    title: Close the banner
-    label: Close
-  toggle:
-    title: Expand/Collapse the banner
-    collapse_label: Collapse
-    expand_label: Expand
   theme_metadata:
     settings:
       show_for_members: "Display the banner for users logged into the forum"
@@ -23,7 +15,7 @@ en:
       full_width_banner: "Display the banner at full browser width"
       swap_default_positioning: "If there is another banner-related component active, use this to swap its position with the Versatile Banner"
       plugin_outlet: "below-site-header puts it above the sidebar, above-main-container puts it above the content to the side of the sidebar"
-      banner_background_image: 'The source url for your background image. Tip: You can upload an image to your main theme and use the url from that, but make sure that you do not use "Uploads" section of this component. Any uploads added to this component will be deleted whenever it is updated.'
+      banner_background_image: 'The source url for your background image.'
       banner_background_image_dark: "The source url for your background image when system dark mode is detected."
       background_color: "Used in place of a background image"
       background_color_dark: "Used in place of a background image when system dark mode is detected."
@@ -32,6 +24,42 @@ en:
       secondary_text_color: "The text color of the icon and text headings, and the button background color."
       secondary_text_color_dark: "The text color of the icon and text headings, and the button background color when system dark mode is detected."
       link_text_color: "The text color of links within the banner."
-      link_text_color_dark: "The text color of links within the banner when system dark mode is detected. <br><br><br><h2>Banner Content Customization</h2> Customize the content of the banner with HTML. If you need to style your custom content with CSS, create a separate theme component. Leave the content blank to exclude a column. While a fourth column is provided, it will likely result in too much content for the available space. Be sure you are happy with your configuration across different brower widths."
-      fifth_column_content: '<br><br><h2>Column Sizes</h2>Use a percentage to make columns more wide or narrow. When set to "auto", the column will fill the available space evenly with other "auto" columns.'
-      fifth_column_size: '<br><br><h2>Column Icons</h2>Use font awesome or a link to an image for the icon at the top of the columns. <a href="https://fontawesome.com/v6/search?o=r&m=free" target="_blank">Click Here</a> to view the list of available icons.'
+      link_text_color_dark: "The text color of links within the banner when system dark mode is detected."
+      fifth_column_icon: "Column Icons"
+      fifth_column_content: '<br><br><h2>Column Sizes</h2>Use a percentage to make columns wider or narrower. When set to "automatic", the column will fill the available space equally with other "automatic" columns.'
+      fifth_column_size: '<br><br><h2>Column Icons</h2>Use font awesome or a link to an image for the icon at the top of each column. Click <a href="https://fontawesome.com/v6/search?o=r&m=free" target="_blank">here</a> to view the list of available icons.'
+  main_heading_html: |
+    <h2 class="x-title">
+       English Welcome
+    </h2>
+    <div class="colored-line"></div>
+    <div class="description">
+      <p>
+        This is the English content.
+      </p>
+    </div>
+    <div class="colored-line"></div>
+  first_column_html: |
+    <h3>A simple box</h3>
+    <p>
+      English column description.
+    </p>
+  second_column_html: |
+    <h3>Another simple box</h3>
+    <p>
+      Integer velit ante, gravida at ligula.
+    </p>
+  third_column_html: |
+    <h3>Yet another simple box</h3>
+    <p>
+      Pellentesque ut lacinia nunc, eu molestie nulla.
+    </p>
+  fourth_column_html: " "
+  fifth_column_html: " "
+  close:
+    title: Close the banner
+    label: Close
+  toggle:
+    title: Expand/Collapse the banner
+    collapse_label: Collapse
+    expand_label: Expand

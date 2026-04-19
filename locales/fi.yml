@@ -6,13 +6,6 @@
 
 ---
 fi:
-  close:
-    title: Sulje banneri
-    label: Sulje
-  toggle:
-    title: Laajenna/kutista banneri
-    collapse_label: Kutista
-    expand_label: Laajenna
   theme_metadata:
     settings:
       show_for_members: "Näytä banneri foorumiin kirjautuneille käyttäjille"
@@ -41,3 +34,38 @@ fi:
       link_text_color_dark: "Bannerin linkkien tekstin väri, kun järjestelmän tumma tila havaitaan. <br><br><br><h2>Bannerin sisällön mukauttaminen</h2> Mukauta bannerin sisältöä HTML:llä. Jos haluat muuttaa mukautetun sisältösi tyyliä CSS:n avulla, luo erillinen teemakomponentti. Voit jättää sarakkeen pois jättämällä sisällön tyhjäksi. Vaikka neljäs sarake tarjotaan, se johtaa todennäköisesti liialliseen määrään sisältöä käytettävissä olevaan tilaan nähden. Varmista, että olet tyytyväinen määritykseesi eri selaimen leveyksillä."
       fifth_column_content: '<br><br><h2>Sarakkeiden koot</h2>Käytä prosenttiosuutta leventääksesi tai kaventaaksesi sarakkeita. Kun asetus on "auto", sarake täyttää käytettävissä olevan tilan tasaisesti muiden "auto"-sarakkeiden kanssa.'
       fifth_column_size: '<br><br><h2>Sarakkeiden kuvakkeet</h2>Käytä Font Awesomea tai kuvan linkkiä sarakkeiden yläosassa oleville kuvakkeille. Katso luettelo käytettävisä olevista kuvakkeista <a href="https://fontawesome.com/v6/search?o=r&m=free" target="_blank">napsauttamalla tätä</a>.'
+  main_heading_html: |
+    <h2 class="x-title">
+       English Welcome
+    </h2>
+    <div class="colored-line"></div>
+    <div class="description">
+      <p>
+        This is the English content.
+      </p>
+    </div>
+    <div class="colored-line"></div>
+  first_column_html: |
+    <h3>A simple box</h3>
+    <p>
+      English column description.
+    </p>
+  second_column_html: |
+    <h3>Another simple box</h3>
+    <p>
+      Integer velit ante, gravida at ligula.
+    </p>
+  third_column_html: |
+    <h3>Yet another simple box</h3>
+    <p>
+      Pellentesque ut lacinia nunc, eu molestie nulla.
+    </p>
+  fourth_column_html: ""
+  fifth_column_html: ""
+  close:
+    title: Sulje banneri
+    label: Sulje
+  toggle:
+    title: Laajenna/kutista banneri
+    collapse_label: Kutista
+    expand_label: Laajenna

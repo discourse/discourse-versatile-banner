@@ -6,13 +6,6 @@
 
 ---
 tr_TR:
-  close:
-    title: Banner'ı kapat
-    label: Kapat
-  toggle:
-    title: Banner'ı genişlet/daralt
-    collapse_label: Daralt
-    expand_label: Genişlet
   theme_metadata:
     settings:
       show_for_members: "Foruma giriş yapmış kullanıcılar için banner'ı göster"
@@ -39,5 +32,41 @@ tr_TR:
       secondary_text_color_dark: "Sistem karanlık modu algılandığında simge ve metin başlıklarının metin rengi ve düğme arka plan rengi."
       link_text_color: "Banner içindeki bağlantıların metin rengi."
       link_text_color_dark: "Sistem karanlık modu algılandığında banner içindeki bağlantıların metin rengi. <br><br><br><h2>Banner İçeriği Özelleştirme</h2> Banner içeriğini HTML ile özelleştirin. Özel içeriğinizi CSS ile biçimlendirmeniz gerekiyorsa ayrı bir tema bileşeni oluşturun. Bir sütunu hariç tutmak için içeriği boş bırakın. Dördüncü bir sütun sağlansa da muhtemelen kullanılabilir alan için çok fazla içerikle sonuçlanır. Farklı tarayıcı genişliklerinde yapılandırmanızdan memnun olduğunuzdan emin olun."
+      fifth_column_icon: "Sütun Simgeleri"
       fifth_column_content: '<br><br><h2>Sütun Boyutları</h2>Sütunları daha geniş veya dar yapmak için bir yüzde kullanın. "Otomatik" olarak ayarlandığında, sütun kullanılabilir alanı diğer "otomatik" sütunlarla eşit şekilde doldurulur.'
       fifth_column_size: '<br><br><h2>Sütun Simgeleri</h2>Sütunların en üstündeki simge için font awesome''ı veya bir görüntüye bağlantıyı kullanın. Kullanılabilir simgelerin listesini görüntülemek için <a href="https://fontawesome.com/v6/search?o=r&m=free" target="_blank">buraya tıklayın</a>.'
+  main_heading_html: |
+    <h2 class="x-title">
+       Türkçe Hoşgeldiniz
+    </h2>
+    <div class="colored-line"></div>
+    <div class="description">
+      <p>
+        Bu Türkçe içerik.
+      </p>
+    </div>
+    <div class="colored-line"></div>
+  first_column_html: |
+    <h3>A simple box</h3>
+    <p>
+      Bu Türkçe sütun açıklaması.
+    </p>
+  second_column_html: |
+    <h3>Another simple box</h3>
+    <p>
+      Bu Türkçe ikinci sütun açıklaması.
+    </p>
+  third_column_html: |
+    <h3>Yet another simple box</h3>
+    <p>
+      Bu Türkçe üçüncü sütun açıklaması.
+    </p>
+  fourth_column_html: " "
+  fifth_column_html: " "
+  close:
+    title: Banner'ı kapat
+    label: Kapat
+  toggle:
+    title: Banner'ı genişlet/daralt
+    collapse_label: Daralt
+    expand_label: Genişlet

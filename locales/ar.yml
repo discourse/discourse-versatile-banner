@@ -6,13 +6,6 @@
 
 ---
 ar:
-  close:
-    title: إغلاق البانر
-    label: إغلاق
-  toggle:
-    title: توسيع/طي البانر
-    collapse_label: طي
-    expand_label: توسيع
   theme_metadata:
     settings:
       show_for_members: "عرض البانر للمستخدمين المسجَّلين في المنتدى"
@@ -41,3 +34,38 @@ ar:
       link_text_color_dark: "لون نص الروابط داخل البانر عند اكتشاف الوضع الداكن للنظام. <br><br><br><h2>تخصيص محتوى اللافتة</h2> تخصيص محتوى اللافتة باستخدام HTML. إذا كنت بحاجة إلى تصميم المحتوى المخصَّص باستخدام CSS، فأنشئ مكونًا منفصلًا للموضوع. اترك المحتوى فارغًا لاستبعاد عمود. على الرغم من توفير عمود رابع، فمن المحتمل أن يؤدي ذلك إلى زيادة المحتوى عن المساحة المتاحة. تأكَّد من أنك راضٍ عن التكوين الخاص بك عبر مختلف قياسات عرض المتصفح."
       fifth_column_content: '<br><br><h2>أحجام الأعمدة</h2>استخدم نسبة مئوية لجعل الأعمدة أكثر عرضًا أو ضيقًا. عند ضبطها على "تلقائي"، سيملأ العمود المساحة المتاحة بالتساوي مع الأعمدة "التلقائية" الأخرى.'
       fifth_column_size: '<br><br><h2>أيقونات الأعمدة</h2>استخدم fontawesome أو رابطًا للصورة للأيقونة في أعلى الأعمدة. <a href="https://fontawesome.com/v6/search?o=r&m=free" target="_blank">انقر هنا</a> لعرض قائمة الأيقونات المتوفرة.'
+  main_heading_html: |
+    <h2 class="x-title">
+       English Welcome
+    </h2>
+    <div class="colored-line"></div>
+    <div class="description">
+      <p>
+        This is the English content.
+      </p>
+    </div>
+    <div class="colored-line"></div>
+  first_column_html: |
+    <h3>A simple box</h3>
+    <p>
+      English column description.
+    </p>
+  second_column_html: |
+    <h3>Another simple box</h3>
+    <p>
+      Integer velit ante, gravida at ligula.
+    </p>
+  third_column_html: |
+    <h3>Yet another simple box</h3>
+    <p>
+      Pellentesque ut lacinia nunc, eu molestie nulla.
+    </p>
+  fourth_column_html: ""
+  fifth_column_html: ""
+  close:
+    title: إغلاق البانر
+    label: إغلاق
+  toggle:
+    title: توسيع/طي البانر
+    collapse_label: طي
+    expand_label: توسيع

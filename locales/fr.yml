@@ -41,3 +41,38 @@ fr:
       link_text_color_dark: "Couleur du texte des liens dans la bannière lorsque le mode sombre du système est détecté. <br><br><br><h2>Personnalisation du contenu de la bannière</h2> Personnalisez le contenu de la bannière avec du code HTML. Si vous avez besoin de styliser votre contenu personnalisé avec du CSS, créez un composant de thème distinct. Laissez le contenu vide pour exclure une colonne. Bien qu'une quatrième colonne soit fournie, elle produira probablement trop de contenu par rapport à l'espace disponible. Assurez-vous d'être satisfait(e) de votre configuration sur les différentes largeurs de navigateur."
       fifth_column_content: '<br><br><h2>Tailles des colonnes</h2>Utilisez un pourcentage pour élargir ou affiner les colonnes. Lorsqu''elle est réglée sur « auto », la colonne remplira l''espace disponible de la même manière que les autres colonnes « automatiques ».'
       fifth_column_size: '<br><br><h2>Icônes de colonnes</h2>Utilisez Font Awesome ou un lien vers une image pour l''icône en haut des colonnes. <a href="https://fontawesome.com/v6/search?o=r&m=free" target="_blank">Cliquez ici</a> pour afficher la liste des icônes disponibles.'
+  main_heading_html: |
+    <h2 class="x-title">
+       English Welcome
+    </h2>
+    <div class="colored-line"></div>
+    <div class="description">
+      <p>
+        This is the English content.
+      </p>
+    </div>
+    <div class="colored-line"></div>
+  first_column_html: |
+    <h3>A simple box</h3>
+    <p>
+      English column description.
+    </p>
+  second_column_html: |
+    <h3>Another simple box</h3>
+    <p>
+      Integer velit ante, gravida at ligula.
+    </p>
+  third_column_html: |
+    <h3>Yet another simple box</h3>
+    <p>
+      Pellentesque ut lacinia nunc, eu molestie nulla.
+    </p>
+  fourth_column_html: ""
+  fifth_column_html: ""
+  close:
+    title: Fermer la bannière
+    label: Fermer
+  toggle:
+    title: Développer/réduire la bannière
+    collapse_label: Réduire
+    expand_label: Développer

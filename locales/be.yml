@@ -5,3 +5,43 @@
 # https://translate.discourse.org/
 
 be:
+  theme_metadata:
+    settings:
+      show_for_members: "Паказваць банэр для зарэгістраваных карыстальнікаў"
+      show_for_anon: "Паказваць банэр для ананімных карыстальнікаў"
+      display_on_mobile: "Паказваць банэр на мабільных устройствах"
+  main_heading_html: |
+    <h2 class="x-title">
+       English Welcome
+    </h2>
+    <div class="colored-line"></div>
+    <div class="description">
+      <p>
+        This is the English content.
+      </p>
+    </div>
+    <div class="colored-line"></div>
+  first_column_html: |
+    <h3>A simple box</h3>
+    <p>
+      English column description.
+    </p>
+  second_column_html: |
+    <h3>Another simple box</h3>
+    <p>
+      Integer velit ante, gravida at ligula.
+    </p>
+  third_column_html: |
+    <h3>Yet another simple box</h3>
+    <p>
+      Pellentesque ut lacinia nunc, eu molestie nulla.
+    </p>
+  fourth_column_html: ""
+  fifth_column_html: ""
+  close:
+    title: Close the banner
+    label: Close
+  toggle:
+    title: Expand/Collapse the banner
+    collapse_label: Collapse
+    expand_label: Expand

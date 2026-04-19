@@ -28,33 +28,36 @@ export default class VersatileBanner extends Component {
   collapsedFromCookie = this.cookieCollapsed
     ? JSON.parse(this.cookieCollapsed).collapsed
     : null;
-  columnData = [
-    {
-      content: settings.first_column_content,
-      class: "first_column",
-      icon: convertIconClass(settings.first_column_icon),
-    },
-    {
-      content: settings.second_column_content,
-      class: "second_column",
-      icon: convertIconClass(settings.second_column_icon),
-    },
-    {
-      content: settings.third_column_content,
-      class: "third_column",
-      icon: convertIconClass(settings.third_column_icon),
-    },
-    {
-      content: settings.fourth_column_content,
-      class: "fourth_column",
-      icon: convertIconClass(settings.fourth_column_icon),
-    },
-    {
-      content: settings.fifth_column_content,
-      class: "fifth_column",
-      icon: convertIconClass(settings.fifth_column_icon),
-    },
-  ];
+
+  get columnData() {
+    return [
+      {
+        content: i18n(themePrefix("first_column_html")),
+        class: "first_column",
+        icon: convertIconClass(settings.first_column_icon),
+      },
+      {
+        content: i18n(themePrefix("second_column_html")),
+        class: "second_column",
+        icon: convertIconClass(settings.second_column_icon),
+      },
+      {
+        content: i18n(themePrefix("third_column_html")),
+        class: "third_column",
+        icon: convertIconClass(settings.third_column_icon),
+      },
+      {
+        content: i18n(themePrefix("fourth_column_html")),
+        class: "fourth_column",
+        icon: convertIconClass(settings.fourth_column_icon),
+      },
+      {
+        content: i18n(themePrefix("fifth_column_html")),
+        class: "fifth_column",
+        icon: convertIconClass(settings.fifth_column_icon),
+      },
+    ];
+  }
 
   get cookieExpirationDate() {
     if (settings.cookie_lifespan === "none") {
@@ -169,7 +172,7 @@ export default class VersatileBanner extends Component {
               {{/if}}
             </div>
             <div class="section-header">
-              {{htmlSafe settings.main_heading_content}}
+              {{htmlSafe (i18n (themePrefix "main_heading_html"))}}
             </div>
             <div
               id="banner-content_wrap"
