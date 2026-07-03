@@ -22,10 +22,29 @@ $link-text: dark-light-choose(
   $link_text_color,
   dark-if-set($link_text_color_dark, $link_text_color)
 );
-$bg-img: url(dark-light-choose(
-  $banner_background_image,
-  dark-if-set($banner_background_image_dark, $banner_background_image)
-));
+
+// an external url setting overrides the upload setting; the upload
+// defaults to the theme's bundled image, and clearing it (an empty
+// value, as distinct from an unset one) means no image at all
+@function banner-img($external-url, $upload-url) {
+  @if $external-url != "" {
+    @return url("#{$external-url}");
+  } @else if $upload-url == "" {
+    @return none;
+  } @else {
+    @return url("#{$upload-url}");
+  }
+}
+
+$bg-img-light: banner-img($banner_background_image, $banner_background_upload);
+$bg-img-dark: banner-img(
+  $banner_background_image_dark,
+  $banner_background_upload_dark
+);
+$bg-img: dark-light-choose(
+  $bg-img-light,
+  if($bg-img-dark == none, $bg-img-light, $bg-img-dark)
+);
 
 :root {
   --banner-bg-color: #{$bg-color};

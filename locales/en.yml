@@ -23,8 +23,10 @@ en:
       full_width_banner: "Display the banner at full browser width"
       swap_default_positioning: "If there is another banner-related component active, use this to swap its position with the Versatile Banner"
       plugin_outlet: "below-site-header puts it above the sidebar, above-main-container puts it above the content to the side of the sidebar"
-      banner_background_image: 'The source url for your background image. Tip: You can upload an image to your main theme and use the url from that, but make sure that you do not use "Uploads" section of this component. Any uploads added to this component will be deleted whenever it is updated.'
-      banner_background_image_dark: "The source url for your background image when system dark mode is detected."
+      banner_background_upload: "The background image for the banner. Defaults to the image bundled with this component; remove the image to use no background image."
+      banner_background_upload_dark: "The background image for the banner when system dark mode is detected. When empty, the regular background image is used."
+      banner_background_image: "Optional source url for an externally hosted background image. When set, it overrides the banner background upload setting."
+      banner_background_image_dark: "Optional source url for an externally hosted background image when system dark mode is detected. When set, it overrides the dark banner background upload setting."
       background_color: "Used in place of a background image"
       background_color_dark: "Used in place of a background image when system dark mode is detected."
       primary_text_color: "The main text color of the banner"

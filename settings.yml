@@ -56,9 +56,15 @@ plugin_outlet:
     - "header-list-container-bottom"
     - "before-topic-list"
   refresh: true
+banner_background_upload:
+  type: upload
+  default: default_banner_background
+banner_background_upload_dark:
+  type: upload
+  default: ""
 banner_background_image:
   type: string
-  default: "https://i.imgur.com/k7SnZth.jpg"
+  default: ""
 banner_background_image_dark:
   type: string
   default: ""
