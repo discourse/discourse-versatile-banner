@@ -29,8 +29,6 @@ fi:
       full_width_banner: "Näytä banneri koko selaimen leveydellä"
       swap_default_positioning: "Jos jokin toinen banneriin liittyvä komponentti on aktiivinen, käytä tätä vaihtaaksesi sen sijaintia monipuolisen bannerin kanssa"
       plugin_outlet: "below-site-header sijoittaa sen sivupalkin yläpuolelle, above-main-container sijoittaa sen sisällön yläpuolelle sivupalkin sivulle"
-      banner_background_image: 'Taustakuvasi lähde-URL-osoite. Vinkki: Voit ladata kuvan pääteemaasi ja käyttää sen URL-osoitetta, mutta varmista, ettet käytä tämän komponentin Lataukset-osiota. Kaikki tähän komponenttiin lisätyt lataukset poistetaan aina, kun se päivitetään.'
-      banner_background_image_dark: "Taustakuvasi lähde-URL-osoite, kun järjestelmän tumma tila havaitaan."
       background_color: "Käytetään taustakuvan sijasta"
       background_color_dark: "Käytetään taustakuvan sijasta, kun järjestelmän tumma tila havaitaan."
       primary_text_color: "Bannerin pääasiallinen tekstin väri"

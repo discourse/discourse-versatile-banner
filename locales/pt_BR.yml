@@ -29,8 +29,6 @@ pt_BR:
       full_width_banner: "Exibir o banner na altura máxima do navegador"
       swap_default_positioning: "Se houver outro componente relacionado ao banner ativo, use esta opção para trocá-lo de posição com o banner versátil"
       plugin_outlet: "A opção \"below-site-header\" posiciona acima da barra lateral, e \"above-main-container\" acima do conteúdo ao lado da barra lateral"
-      banner_background_image: 'A URL de origem da sua imagem de fundo. Dica: você pode carregar uma imagem para o tema principal e usar a respectiva URL. Mas não use a seção "Envios" deste componente. Os envios adicionados a ele serão excluídos no momento da atualização.'
-      banner_background_image_dark: "A URL de origem da sua imagem de fundo quando o Modo Escuro do sistema for detectado."
       background_color: "Use em vez da imagem de fundo"
       background_color_dark: "Use em vez da imagem de fundo quando o Modo Escuro do sistema for detectado."
       primary_text_color: "A cor do texto principal do banner"

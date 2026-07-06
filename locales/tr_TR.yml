@@ -29,8 +29,6 @@ tr_TR:
       full_width_banner: "Banner'ı tam tarayıcı genişliğinde göster"
       swap_default_positioning: "Başka bir banner ile ilgili bileşen etkinse bunu Çok Yönlü Banner ile konumunu değiştirmek için kullanın"
       plugin_outlet: "below-site-header bunu kenar çubuğunun üstüne koyar, above-main-container bunu kenar çubuğunun yanındaki içeriğin üstüne koyar"
-      banner_background_image: 'Arka plan resminizin kaynak URL''si. İpucu: Ana temanıza bir resim yükleyebilir ve bunun URL''sini kullanabilirsiniz, ancak bu bileşenin “Yüklemeler” bölümünü kullanmadığınızdan emin olun. Bu bileşene eklenen tüm yüklemeler, güncellendiğinde silinir.'
-      banner_background_image_dark: "Sistem karanlık modu algılandığında arka plan resminizin kaynak URL'si."
       background_color: "Arka plan resmi yerine kullanılır"
       background_color_dark: "Sistem karanlık modu algılandığında arka plan resmi yerine kullanılır."
       primary_text_color: "Banner'ın ana metin rengi"

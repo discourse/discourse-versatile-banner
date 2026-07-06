@@ -29,8 +29,6 @@ ja:
       full_width_banner: "バナーをブラウザの全幅で表示する"
       swap_default_positioning: "他のバナー関連コンポーネントがアクティブになっている場合、これを使用してその位置を多目的バナーと入れ替えます"
       plugin_outlet: "below-site-header はサイドバーの上に、above-main-container はサイドバーの横のコンテンツの上に配置します"
-      banner_background_image: '背景画像のソース URL。ヒント: メインのテーマに画像をアップロードして、そこから URL を使用できますが、このコンポーネントの「アップロード」セクションは使用しないでください。このコンポーネントに追加されるアップロードは更新のたびに削除されます。'
-      banner_background_image_dark: "システムのダークモードが検出された場合の背景画像のソース URLです。"
       background_color: "背景画像の代わりに使用"
       background_color_dark: "システムのダークモードが検出された場合に、背景画像の代わりに使用されます。"
       primary_text_color: "バナーのメインテキストの色"
