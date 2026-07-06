@@ -29,8 +29,6 @@ fr:
       full_width_banner: "Afficher la bannière sur toute la largeur du navigateur"
       swap_default_positioning: "Si un autre composant lié à la bannière est actif, utilisez-le pour échanger sa position avec la bannière polyvalente"
       plugin_outlet: "below-site-header le place au-dessus de la barre latérale, above-main-container le place au-dessus du contenu sur le côté de la barre latérale"
-      banner_background_image: 'L''URL source de votre image d''arrière-plan. Conseil : vous pouvez téléverser une image sur votre thème principal et utiliser l''URL correspondante, mais assurez-vous de ne pas utiliser la section « Téléversements » de ce composant. Tous les téléversements ajoutés à ce composant seront supprimés chaque fois qu''il sera mis à jour.'
-      banner_background_image_dark: "URL source de votre image d'arrière-plan lorsque le mode sombre du système est détecté."
       background_color: "Utilisé à la place d'une image d'arrière-plan"
       background_color_dark: "Utilisé à la place d'une image d'arrière-plan lorsque le mode sombre du système est détecté."
       primary_text_color: "La couleur principale du texte de la bannière"

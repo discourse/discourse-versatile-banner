@@ -29,8 +29,6 @@ nl:
       full_width_banner: "Banner weergeven op volledige browserbreedte"
       swap_default_positioning: "Als er een andere bannergerelateerd component actief is, kun je dit gebruiken om de positie ervan te verwisselen met de Versatile Banner"
       plugin_outlet: "below-site-header plaatst de baner boven de zijbalk, above-main-container plaatst hem boven de inhoud opzij van de zijbalk"
-      banner_background_image: 'De bron-URL voor je achtergrondafbeelding. Tip: je kunt een afbeelding uploaden naar je hoofdthema en de URL daarvan gebruiken, maar zorg dat je de sectie "Uploads" van deze component niet gebruikt. Alle uploads die aan deze component worden toegevoegd, worden verwijderd wanneer deze wordt bijgewerkt.'
-      banner_background_image_dark: "De bron-URL voor je achtergrondafbeelding wanneer de donkere systeemmodus wordt gedetecteerd."
       background_color: "Wordt gebruikt in plaats van een achtergrondafbeelding"
       background_color_dark: "Wordt gebruikt in plaats van een achtergrondafbeelding wanneer de donkere systeemmodus wordt gedetecteerd."
       primary_text_color: "De hoofdtekstkleur van de banner"
