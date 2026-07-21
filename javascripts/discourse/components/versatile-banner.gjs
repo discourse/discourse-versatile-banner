@@ -11,23 +11,53 @@ import { and } from "discourse/truth-helpers";
 import { i18n } from "discourse-i18n";
 import VersatileBannerColumn from "./versatile-banner-column";
 
+function readBannerCookie(name) {
+  const value = cookie(name);
+
+  if (!value) {
+    return null;
+  }
+
+  if (settings.cookie_lifespan === "none") {
+    removeCookie(name, { path: "/" });
+    return null;
+  }
+
+  let state;
+  try {
+    state = JSON.parse(value);
+  } catch {
+    removeCookie(name, { path: "/" });
+    return null;
+  }
+
+  if (state?.name !== settings.cookie_name) {
+    removeCookie(name, { path: "/" });
+    return null;
+  }
+
+  return state;
+}
+
+function readBannerCollapsed() {
+  const state = readBannerCookie("banner_collapsed");
+
+  if (!state) {
+    return null;
+  }
+
+  return state.collapsed === true || state.collapsed === "true";
+}
+
 export default class VersatileBanner extends Component {
   @service router;
   @service currentUser;
 
-  @tracked bannerClosed = this.cookieClosed || false;
+  @tracked bannerClosed = readBannerCookie("banner_closed")?.closed === "true";
   @tracked
   bannerCollapsed =
-    this.collapsedFromCookie !== null
-      ? this.collapsedFromCookie
-      : this.isDefaultCollapsed;
+    readBannerCollapsed() ?? settings.default_collapsed_state === "collapsed";
 
-  cookieClosed = cookie("banner_closed");
-  cookieCollapsed = cookie("banner_collapsed");
-  isDefaultCollapsed = settings.default_collapsed_state === "collapsed";
-  collapsedFromCookie = this.cookieCollapsed
-    ? JSON.parse(this.cookieCollapsed).collapsed
-    : null;
   columnData = [
     {
       content: settings.first_column_content,
@@ -58,11 +88,10 @@ export default class VersatileBanner extends Component {
 
   get cookieExpirationDate() {
     if (settings.cookie_lifespan === "none") {
-      removeCookie("banner_closed", { path: "/" });
-      removeCookie("banner_collapsed", { path: "/" });
-    } else {
-      return moment().add(1, settings.cookie_lifespan).toDate();
+      return null;
     }
+
+    return moment().add(1, settings.cookie_lifespan).toDate();
   }
 
   get displayForUser() {
@@ -123,24 +152,18 @@ export default class VersatileBanner extends Component {
   @action
   toggleBanner() {
     this.bannerCollapsed = !this.bannerCollapsed;
-    let bannerState = {
-      name: settings.cookie_name,
-      collapsed: this.bannerCollapsed,
-    };
 
     if (this.cookieExpirationDate) {
-      if (this.cookieCollapsed) {
-        bannerState = JSON.parse(this.cookieCollapsed);
-        bannerState.collapsed = this.bannerCollapsed;
-      }
-    } else {
-      bannerState.collapsed = this.bannerCollapsed;
-    }
+      const bannerState = {
+        name: settings.cookie_name,
+        collapsed: this.bannerCollapsed,
+      };
 
-    cookie("banner_collapsed", JSON.stringify(bannerState), {
-      expires: this.cookieExpirationDate,
-      path: "/",
-    });
+      cookie("banner_collapsed", JSON.stringify(bannerState), {
+        expires: this.cookieExpirationDate,
+        path: "/",
+      });
+    }
   }
 
   <template>
